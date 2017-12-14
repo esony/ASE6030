@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Button Content="Start sequence" Height="23" HorizontalAlignment="Left" Margin="425,30,0,0" x:Name="StartButton" VerticalAlignment="Top" Width="136" Click="Impregnation_Click" Cursor="Hand" Background="#FF01B526"  FontWeight="Bold" OpacityMask="#FFBE5858" IsEnabled="False" >
+        <Button Content="Start sequence" Height="23" HorizontalAlignment="Left" Margin="604,37,0,0" x:Name="StartButton" VerticalAlignment="Top" Width="136" Click="Impregnation_Click" Cursor="Hand" Background="#FF01B526"  FontWeight="Bold" OpacityMask="#FFBE5858" IsEnabled="False" >
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}"/>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Abort" Height="23" HorizontalAlignment="Left" Margin="425,60,0,0" x:Name="AbortButton" VerticalAlignment="Top" Width="136" Click="AbortImpregnation_Click" Background="Red" FontWeight="Bold" Cursor="Hand" >
+        <Button Content="Abort" Height="23" HorizontalAlignment="Left" Margin="604,67,0,0" x:Name="AbortButton" VerticalAlignment="Top" Width="136" Click="AbortImpregnation_Click" Background="Red" FontWeight="Bold" Cursor="Hand" >
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}"/>
             </Button.BorderBrush>
@@ -38,15 +38,41 @@
         <TextBox x:Name="CookingTemperatureInput" HorizontalAlignment="Left" Height="18" Margin="160,227,0,0" TextWrapping="Wrap" Text="23" VerticalAlignment="Top" Width="40" TextChanged="CookingTemperatureInput_TextChanged"/>
         <TextBox x:Name="GainInput" HorizontalAlignment="Left" Height="18" Margin="160,288,0,0" TextWrapping="Wrap" Text="0,2" VerticalAlignment="Top" Width="40" TextChanged="GainInput_TextChanged"/>
         <TextBox x:Name="IntegrationTimeInput" HorizontalAlignment="Left" Height="18" Margin="160,311,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="40" TextChanged="IntegrationTimeInput_TextChanged"/>
-        <Rectangle x:Name="T200" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="247,0,0,258.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T200Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="247,0,0,258.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T100" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="618,0,0,153.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T100Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="618,0,0,153.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T300" Fill="#FF737373" HorizontalAlignment="Left" Height="100" Margin="372,0,0,195.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T400" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="503,0,0,140.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Rectangle x:Name="T400Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="503,0,0,140.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
-        <Label x:Name="LI100" Content="0" HorizontalAlignment="Left" Margin="643,351,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="LI200" Content="0" HorizontalAlignment="Left" Margin="272,245,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="LI400" Content="0" HorizontalAlignment="Left" Margin="503,332,0,0" VerticalAlignment="Top" Height="100" Width="70" FontWeight="Bold"/>
+        <Rectangle x:Name="T200" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="279,0,0,333.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T200Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="279,0,0,333.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T100" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="660,0,0,333.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T100Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="660,0,0,333.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T300" Fill="#FF737373" HorizontalAlignment="Left" Height="100" Margin="480,0,0,355.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T400" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="300,0,0,112.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T400Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="300,0,0,112.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Label x:Name="LI100" Content="0" HorizontalAlignment="Left" Margin="685,171,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LI200" Content="0" HorizontalAlignment="Left" Margin="279,139,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LI400" Content="0" HorizontalAlignment="Left" Margin="300,360,0,0" VerticalAlignment="Top" Height="100" Width="70" FontWeight="Bold"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="348,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="132" StrokeThickness="2" X2="300"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="549,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="111" StrokeThickness="2" X2="115"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="18" Margin="0,121,315,0" Stroke="Black" VerticalAlignment="Top" Width="240" StrokeThickness="2" X2="250"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="290" Margin="240,121,0,0" Stroke="Black" VerticalAlignment="Top" Width="111" Y2="302" StrokeThickness="2"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="240,411,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" StrokeThickness="2" X2="115"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="194" Margin="515,217,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" StrokeThickness="2" Y2="300"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="311,311,0,0" Stroke="Black" VerticalAlignment="Top" Width="353" StrokeThickness="2" X2="400"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="72" Margin="311,239,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" StrokeThickness="2" Y2="100"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="72" Margin="685,239,0,0" Stroke="Black" VerticalAlignment="Top" Width="23" StrokeThickness="2" Y2="100"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="370,411,0,0" Stroke="Black" VerticalAlignment="Top" Width="41" StrokeThickness="2" X2="200"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="151" Margin="410,260,0,0" Stroke="Black" VerticalAlignment="Top" Width="42" StrokeThickness="2" Y2="300"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="410,260,0,0" Stroke="Black" VerticalAlignment="Top" Width="105" StrokeThickness="2" X2="115"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="18" Margin="515,411,0,0" Stroke="Black" VerticalAlignment="Top" Width="187" StrokeThickness="2" X2="200"/>
+        <Line Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="172" Margin="701,239,0,0" Stroke="Black" VerticalAlignment="Top" Width="23" StrokeThickness="2" Y2="300"/>
+        <Image Margin="332,299,418,248.5" Source="valve.png" Stretch="Fill"/>
+        <Label x:Name="V201" Content="V201" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,276,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V103" Content="V103" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,254,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V204" Content="V204" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,234,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V301" Content="V301" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,213,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V302" Content="V302" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,194,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V303" Content="V303" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="332,172,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V304" Content="V304" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="393,151,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V401" Content="V401" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="581,139,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V404" Content="V404" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="393,429,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V102" Content="V102" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="631,311,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
+        <Label x:Name="V104" Content="V104" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="567,238,0,0" VerticalAlignment="Top" Background="Red" Width="45" Height="18" />
     </Grid>
 </Window>
