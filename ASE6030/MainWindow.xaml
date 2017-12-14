@@ -38,8 +38,15 @@
         <TextBox x:Name="CookingTemperatureInput" HorizontalAlignment="Left" Height="18" Margin="160,227,0,0" TextWrapping="Wrap" Text="23" VerticalAlignment="Top" Width="40" TextChanged="CookingTemperatureInput_TextChanged"/>
         <TextBox x:Name="GainInput" HorizontalAlignment="Left" Height="18" Margin="160,288,0,0" TextWrapping="Wrap" Text="0,2" VerticalAlignment="Top" Width="40" TextChanged="GainInput_TextChanged"/>
         <TextBox x:Name="IntegrationTimeInput" HorizontalAlignment="Left" Height="18" Margin="160,311,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="40" TextChanged="IntegrationTimeInput_TextChanged"/>
-        <TextBlock x:Name="LI200" HorizontalAlignment="Left" Margin="314,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <Rectangle x:Name="T200" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="247,0,0,258.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
         <Rectangle x:Name="T200Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="247,0,0,258.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T100" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="618,0,0,153.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T100Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="618,0,0,153.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T300" Fill="#FF737373" HorizontalAlignment="Left" Height="100" Margin="372,0,0,195.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T400" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="503,0,0,140.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Rectangle x:Name="T400Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="503,0,0,140.5" Stroke="Black" VerticalAlignment="Bottom" Width="70"/>
+        <Label x:Name="LI100" Content="0" HorizontalAlignment="Left" Margin="643,351,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LI200" Content="0" HorizontalAlignment="Left" Margin="272,245,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LI400" Content="0" HorizontalAlignment="Left" Margin="503,332,0,0" VerticalAlignment="Top" Height="100" Width="70" FontWeight="Bold"/>
     </Grid>
 </Window>

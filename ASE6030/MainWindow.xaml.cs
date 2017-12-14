@@ -136,8 +136,12 @@ namespace ASE6030
             {
                 Console.WriteLine(key);
             }
-            LI200.Text = state["LI200"].ToString();
-            T200Fill.Height = state["LI200"];
+            LI100.Content = state["LI100"].ToString();
+            T100Fill.Height = state["LI100"]/3.5;
+            LI200.Content = state["LI200"].ToString();
+            T200Fill.Height = state["LI200"]/3.5;
+            LI400.Content = state["LI400"].ToString();
+            T400Fill.Height = state["LI400"]/3.5;
 
         }
 
