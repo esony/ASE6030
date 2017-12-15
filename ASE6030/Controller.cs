@@ -81,9 +81,9 @@ namespace ASE6030
             //Handle exception if failed
             } catch (Exception e)
             {
-                Console.WriteLine("---------------");
+                Console.WriteLine("------- ERROR CONNECTING--------");
                 Console.WriteLine(e);
-                Console.WriteLine("---------------");
+                Console.WriteLine("-------                 --------");
                 throw;
             }
         }
@@ -98,14 +98,14 @@ namespace ASE6030
             // On/Off Valves
             v103 = new OnOffValve("V103", ref client);
 
-            v201 = new OnOffValve("V201", ref client);
             v204 = new OnOffValve("V204", ref client);
-
+            v201 = new OnOffValve("V201", ref client);
+            
             v301 = new OnOffValve("V301", ref client);
             v302 = new OnOffValve("V302", ref client);
             v303 = new OnOffValve("V303", ref client);
             v304 = new OnOffValve("V304", ref client);
-
+            
             v401 = new OnOffValve("V401", ref client);
             v404 = new OnOffValve("V404", ref client);
 

@@ -20,6 +20,7 @@ namespace ASE6030
         public void open() {
             //Do stuff
             client.setOnOffItem(name, true);
+            //Async wait for confirmation from server?
             this.isOpen = true;
         }
 

@@ -12,9 +12,14 @@ namespace ASE6030
     {
         private UaLib.MppClient m_mppClient = null;
         private MainWindow window;
+        private bool connection;
         //Let it slide
         private SortedDictionary<string, dynamic> storage;
         private string[] INT_ITEMS = new string[] {
+                                            "V102",
+                                            "V104",
+                                            "P100",
+                                            "P200",
                                             "LI100",
                                             "LI200",
                                             "PI300",
@@ -23,7 +28,16 @@ namespace ASE6030
                                             "TI100",
                                             "TI300"};
 
-        private string[] BOOL_ITEMS = new string[] { 
+        private string[] BOOL_ITEMS = new string[] {
+                                            "V103",
+                                            "V201",
+                                            "V204",
+                                            "V301",
+                                            "V302",
+                                            "V303",
+                                            "V304",
+                                            "V401",
+                                            "V404",
                                             "E100",
                                             "LA+100",
                                             "LS-200",
@@ -33,6 +47,7 @@ namespace ASE6030
         {
             storage = new SortedDictionary<string, dynamic>();
             this.window = window;
+            connection = false;
         }
 
         public int getInt(string key) {
@@ -63,30 +78,40 @@ namespace ASE6030
                 // Adding process items to subscription.
                 // A ProcessItemsChanged event will instantly be raised after
                 // addToSubscription() has been called!
-                
+                m_mppClient.ConnectionStatus += M_mppClient_ConnectionStatus;
                 foreach (var key in INT_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
+                //    Console.WriteLine(key + " added");
                 }
                 foreach (var key in BOOL_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
+                //    Console.WriteLine(key + " added");
                 }
                 foreach (var key in DOUBLE_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
+                //    Console.WriteLine(key + " added");
                 }
             }
             catch (Exception e)
             {
                 // Handle the exception...
-                Console.WriteLine("Error connecting: " + e.Message);
+                Console.WriteLine("Error connecting listener: " + e.Message);
             }
         }
-        
+
+        private void M_mppClient_ConnectionStatus(object source, UaLib.ConnectionStatusEventArgs args)
+        {
+            Console.WriteLine(args.SimplifiedStatus);
+            if (args.SimplifiedStatus.ToString() == "CONNECTING")
+            {
+                System.Windows.MessageBox.Show("CONNECTION LOST" + "\n" + "Reconnecting");
+            }
+            Console.WriteLine("LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOST");
+        }
+
         private void m_mppClient_ProcessItemsChanged(object source,
             UaLib.ProcessItemChangedEventArgs args)
         {
@@ -101,14 +126,14 @@ namespace ASE6030
                         var actualValue = valueObject.Value;
                         storage[key] = actualValue;
                         
-                    //    Console.WriteLine(key + ": " + storage[key]);
+                        Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(BOOL_ITEMS, element => element == key))
                     {
                         var valueObject = (UaLib.MppValueBool)args.ChangedItems[key];
                         var actualValue = valueObject.Value;
                         storage[key] = actualValue;
-                    //    Console.WriteLine(key + ": " + storage[key]);
+                        Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(DOUBLE_ITEMS, element => element == key))
                     {
@@ -127,6 +152,7 @@ namespace ASE6030
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine(" ------------------- CANNOT READ --------------------");
             }
         }
     }

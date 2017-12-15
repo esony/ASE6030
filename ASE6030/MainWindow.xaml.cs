@@ -23,7 +23,8 @@ namespace ASE6030
         private Controller controller;
         private SequenceParameters parameters;
         private SortedDictionary<string, dynamic> state;
-        
+        private SolidColorBrush GREEN;
+        private SolidColorBrush RED;
 
         public MainWindow()
         {
@@ -31,6 +32,11 @@ namespace ASE6030
             controller = new Controller(this);
             parameters = new SequenceParameters();
             state = new SortedDictionary<string, dynamic>();
+
+            GREEN = new SolidColorBrush();
+            GREEN.Color = Colors.GreenYellow;
+            RED = new SolidColorBrush();
+            RED.Color = Colors.OrangeRed;
         }
 
         private void setParameters()
@@ -44,7 +50,7 @@ namespace ASE6030
 
                 parameters.gain = double.Parse(GainInput.Text);
                 parameters.integrationTime = double.Parse(IntegrationTimeInput.Text);
-
+ 
             } catch
             {
                 Err("Incorrect input values!");
@@ -71,6 +77,9 @@ namespace ASE6030
             {
                 setParameters();
                 controller.startImpregnation();
+                AbortButton.IsEnabled = true;
+                StartButton.IsEnabled = false;
+
             } catch (Exception error)
             {
                 Console.WriteLine(error);
@@ -93,8 +102,7 @@ namespace ASE6030
                 
                 controller.connectClient(URL);
                 StartButton.IsEnabled = true;
-                AbortButton.IsEnabled = true;
-                ConnectButton.Visibility = 0;
+                ConnectButton.IsEnabled = false;
                 SimulatorRadioButton.IsEnabled = false;
                 DeviceRadioButton.IsEnabled = false;
 
@@ -113,6 +121,7 @@ namespace ASE6030
             // Invoking in the UI thread
             Dispatcher.BeginInvoke((Action)(() => updateState(state)));
         }
+        
         // Save state changes
         private void updateState(SortedDictionary<string, dynamic> state)
         {
@@ -132,16 +141,38 @@ namespace ASE6030
         // Update the view in mainwindow rather than giving access to everyone
         private void updateView()
         {
-            foreach (var key in state.Keys)
-            {
-                Console.WriteLine(key);
-            }
-            LI100.Content = state["LI100"].ToString();
-            T100Fill.Height = state["LI100"]/3.5;
-            LI200.Content = state["LI200"].ToString();
+            // Tanks
+            LI100.Content = state["LI100"].ToString() + " mm";
+            T100Fill.Height = state["LI100"]/2;
+
+            LI200.Content = state["LI200"].ToString() + " mm";
             T200Fill.Height = state["LI200"]/3.5;
-            LI400.Content = state["LI400"].ToString();
+            PI300.Content = state["PI300"].ToString() + " bar";
+            TI300.Content = state["TI300"].ToString("N2") + " C";
+            LI400.Content = state["LI400"].ToString() + " mm";
             T400Fill.Height = state["LI400"]/3.5;
+
+
+            // Valves
+            V102.Background = state["V102"] == 100 ? GREEN : RED;
+            V103.Background = state["V103"] ? GREEN : RED;
+            V104.Background = state["V104"] > 0 ? GREEN : RED;
+
+            V201.Background = state["V201"] ? GREEN : RED;
+            V204.Background = state["V204"] ? GREEN : RED;
+
+            V301.Background = state["V301"] ? GREEN : RED;
+            V302.Background = state["V302"] ? GREEN : RED;
+            V303.Background = state["V303"] ? GREEN : RED;
+            V304.Background = state["V304"] ? GREEN : RED;
+
+            V401.Background = state["V401"] ? GREEN : RED;
+            V404.Background = state["V404"] ? GREEN : RED;
+
+            // Pumps
+            P100.Background = state["P100"] > 0 ? GREEN : RED;
+            P200.Background = state["P200"] > 0 ? GREEN : RED;
+
 
         }
 
