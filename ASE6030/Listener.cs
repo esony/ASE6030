@@ -126,14 +126,14 @@ namespace ASE6030
                         var actualValue = valueObject.Value;
                         storage[key] = actualValue;
                         
-                        Console.WriteLine(key + ": " + storage[key]);
+                        //Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(BOOL_ITEMS, element => element == key))
                     {
                         var valueObject = (UaLib.MppValueBool)args.ChangedItems[key];
                         var actualValue = valueObject.Value;
                         storage[key] = actualValue;
-                        Console.WriteLine(key + ": " + storage[key]);
+                        //Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(DOUBLE_ITEMS, element => element == key))
                     {

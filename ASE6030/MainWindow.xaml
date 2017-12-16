@@ -6,7 +6,7 @@
         <GroupBox x:Name="ControllerGroup" Margin="10,10,10,538.5" Background="#FFDDDDDD" Content=""/>
         <GroupBox Margin="10,0,10,10.5" Background="White" Height="523" VerticalAlignment="Bottom" Content="Process" FontWeight="Bold"/>
         <Image x:Name="P1" Margin="48,0,0,43.5" Source="PI-kaaavio.png" HorizontalAlignment="Left" Width="700" Stretch="Fill" Height="448" VerticalAlignment="Bottom"/>
-        <Button Content="Start sequence" Height="23" HorizontalAlignment="Left" Margin="620,0,0,604.5" x:Name="StartButton" VerticalAlignment="Bottom" Width="136" Click="Impregnation_Click" Cursor="Hand" Background="#FF01B526"  FontWeight="Bold" OpacityMask="#FFBE5858" IsEnabled="False" >
+        <Button Content="Start sequence" Height="23" HorizontalAlignment="Left" Margin="620,0,0,604.5" x:Name="StartButton" VerticalAlignment="Bottom" Width="136" Click="StartButton_Click" Cursor="Hand" Background="#FF01B526"  FontWeight="Bold" OpacityMask="#FFBE5858" IsEnabled="False" >
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}"/>
             </Button.BorderBrush>
@@ -45,9 +45,9 @@
         <Rectangle x:Name="T300" Fill="#FF737373" HorizontalAlignment="Left" Height="150" Margin="417,0,0,367.5" Stroke="Black" VerticalAlignment="Bottom" Width="94"/>
         <Rectangle x:Name="T400" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="77,0,0,22.5" Stroke="Black" VerticalAlignment="Bottom" Width="90"/>
         <Rectangle x:Name="T400Fill" Fill="#FF009D3D" HorizontalAlignment="Left" Height="0" Margin="77,0,0,22.5" Stroke="Black" VerticalAlignment="Bottom" Width="90"/>
-        <Label x:Name="LI100" Content="0 mm" HorizontalAlignment="Left" Margin="653,0,0,472.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="123" Height="40"/>
-        <Label x:Name="LI200" Content="0 mm" HorizontalAlignment="Left" Margin="139,0,0,404.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
-        <Label x:Name="LI400" Content="0" HorizontalAlignment="Left" Margin="77,0,0,82.5" VerticalAlignment="Bottom" Height="40" Width="90" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="LI100" Content="0 mm" HorizontalAlignment="Left" Margin="653,0,0,452.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="123" Height="30"/>
+        <Label x:Name="LI200" Content="0 mm" HorizontalAlignment="Left" Margin="139,0,0,374.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="LI400" Content="0" HorizontalAlignment="Left" Margin="77,0,0,62.5" VerticalAlignment="Bottom" Height="30" Width="90" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="V201" Content="V201" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="213,0,0,222.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="39" Height="18" />
         <Label x:Name="V103" Content="V103" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="432,0,0,148.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="39" Height="18" />
         <Label x:Name="V204" Content="V204" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="308,0,0,415.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="39" Height="18" />
@@ -65,7 +65,16 @@
         <Label x:Name="Off" Content="Off" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0,0,23,22.5" Background="OrangeRed" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="39" />
         <Label x:Name="On" Content="On" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0,0,62,22.5" Background="GreenYellow" HorizontalAlignment="Right" Width="39" Height="18" VerticalAlignment="Bottom" />
         <Label x:Name="Legend" Content="Legend:" BorderThickness="1" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Margin="0,0,100,22.5" Background="{x:Null}" HorizontalAlignment="Right" Width="69" Height="18" VerticalAlignment="Bottom" />
-        <Label x:Name="PI300" Content="0 bar" HorizontalAlignment="Left" Margin="417,0,0,464.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
-        <Label x:Name="TI300" Content="0 C" HorizontalAlignment="Left" Margin="417,0,0,434.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="PI300" Content="0 bar" HorizontalAlignment="Left" Margin="417,0,0,457.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="TI300" Content="0 C" HorizontalAlignment="Left" Margin="417,0,0,427.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="TI100" Content="0 C" HorizontalAlignment="Left" Margin="653,0,0,422.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="123" Height="30"/>
+        <Label x:Name="T100Label" Content="T100" HorizontalAlignment="Left" Margin="653,0,0,482.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="123" Height="30"/>
+        <Label x:Name="T300Label" Content="T300" HorizontalAlignment="Left" Margin="417,0,0,487.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="T200Label" Content="T200" HorizontalAlignment="Left" Margin="139,0,0,404.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
+        <Label x:Name="LS_200" Content="LS-200" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="194,0,0,316.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="39" Height="18" />
+        <Label x:Name="LS_300" Content="LS-300" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="472,0,0,374.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="39" Height="18" />
+        <Label x:Name="LS300" Content="LS+300" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="467,0,0,493.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="44" Height="18" />
+        <Label x:Name="LA100" Content="LA+100" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="732,0,0,483.5" VerticalAlignment="Bottom" Background="OrangeRed" Width="44" Height="18" />
+        <Label x:Name="T400Label" Content="T400" HorizontalAlignment="Left" Margin="77,0,0,92.5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" Width="94" Height="30"/>
     </Grid>
 </Window>

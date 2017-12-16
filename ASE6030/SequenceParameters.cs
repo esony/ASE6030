@@ -12,7 +12,7 @@ namespace ASE6030
 
         // Cooking
         public int cookingTime;
-        public int cookingTemperature;
+        public double cookingTemperature;
         public int cookingPressure;
 
         // PI Controller

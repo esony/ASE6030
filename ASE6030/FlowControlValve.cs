@@ -9,7 +9,6 @@ namespace ASE6030
     class FlowControlValve
     {
         private String name;
-        private bool isOpen;
         private Thread piThread;
         private double pValue;
         private double iValue;
@@ -22,7 +21,6 @@ namespace ASE6030
 
         public FlowControlValve(String name, ref Tut.MppOpcUaClientLib.MppClient client, ref Listener listener) {
             this.name = name;
-            this.isOpen = false;
             this.client = client;
             this.listener = listener;
             //Some default values
@@ -31,12 +29,13 @@ namespace ASE6030
             this.targetValue = 0;
         }
 
-        public void startPI(double pValue, double iValue, double targetValue, double integrationTime, double controlPeriod, int executionTime)
+        //pValue 0-1, targertValue 0-350, integrationTime ms, controlPeriod ms, executionTime s
+        public void startPI(double pValue, double targetValue, double integrationTime, double controlPeriod, int executionTime)
         {
             piThread = new Thread(() =>
             {
                 this.pValue = pValue;
-                this.iValue = iValue;
+                this.iValue = 0;
                 this.targetValue = targetValue;
                 this.integrationTime = integrationTime;
                 this.controlPeriod = controlPeriod;
@@ -58,8 +57,8 @@ namespace ASE6030
 
         private int control()
         {
-            // Hard coded, sorry
             int controlValue = 0;
+            // Hard coded, sorry
             Console.WriteLine(listener.getInt("PI300"));
 
             int currentValue = listener.getInt("PI300");
@@ -93,15 +92,12 @@ namespace ASE6030
         public void open() { 
             //Do stuff
             client.setValveOpening(name, 100);
-            isOpen = true;
         }
 
         public void close()
         {
             //Do stuff
             client.setValveOpening(name, 0);
-
-            isOpen = false;
         }
     }
 }

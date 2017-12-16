@@ -8,6 +8,7 @@ namespace ASE6030
 {
     class Controller
     {
+        private MainWindow window;
         private Tut.MppOpcUaClientLib.MppClient.MppClientCtorParams simulatorParams;
         public Tut.MppOpcUaClientLib.MppClient client;
         public Listener listener;
@@ -40,13 +41,14 @@ namespace ASE6030
         private Thread WhiteLiquorThread;
         private Thread CookingThread;
 
-        private MainWindow window;
+        private SequenceParameters parameters;
 
         public Controller(MainWindow window) {
+            this.window = window;
             client = null;
             listener = new Listener(window);
             URL = SIMULATOR_URL;
-            this.window = window;
+            parameters = null;
         }
 
         private void startListener()
@@ -117,6 +119,28 @@ namespace ASE6030
             e100 = new Heater("E100", ref client, ref listener);
         }
 
+        public void setParams(SequenceParameters parameters)
+        {
+            if (parameters.impregnationTime <= 0 || parameters.impregnationTime > 60) Err("Impregnation time must be between 0 and 60");
+            else if (parameters.cookingTime < 0 || parameters.cookingTime > 100) Err("Cooking time must be between 0 and 100");
+            else if (parameters.cookingTemperature < 20 || parameters.cookingTemperature > 80) Err("Cooking temperature must be between 20 and 80");
+            else if (parameters.cookingPressure < 0 || parameters.cookingPressure > 350) Err("Cooking pressure must be between 0 and 350");
+            else if (parameters.gain < 0 || parameters.gain > 1) Err("Gain must be between 0 and 1,0");
+            else if (parameters.integrationTime < 0 || parameters.integrationTime > 1) Err("Integration time must be between 0 and 1,0");
+            else
+            {
+                this.parameters = parameters;
+                return;
+            }
+        }
+
+        public void startSequence()
+        {
+            /* await Impregnation
+             * await ...rest
+             */
+        }
+
         // Sequence functionalities
         public void startImpregnation()
         {
@@ -146,6 +170,7 @@ namespace ASE6030
 
                 Thread.Sleep(Ti);
 
+                // A test to determ whether to run the indiviaul tasks asynchronously
                 System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
                 stopWatch.Start();
                 EM2_OP2();
@@ -154,16 +179,18 @@ namespace ASE6030
                 stopWatch.Stop();
                 Console.WriteLine(stopWatch.ElapsedMilliseconds + "ms");
                 Console.WriteLine("-----------------");
-                
+                // Average of about 16ms determines there is no need, system loop time 200ms
+
+
                 // Delay time Td
                 int Td = 1000;
                 EM3_OP8(Td);
 
-                //Here for now
+                // Here for now
                 startBlackLiquorFill();
             });
 
-            //Thread set to background for development
+            // Thread set to background for development
             ImpregnationThread.IsBackground = true;
             ImpregnationThread.Start();
             
@@ -171,37 +198,35 @@ namespace ASE6030
         // Abort whatever is happening
         public void abortImpregnation()
         {
-            //Probably needs a thread container to kill all
+            // Probably needs a thread container to kill all
             ImpregnationThread.Abort();
             BlackLiquorThread.Abort();
         }
 
-        public void startBlackLiquorFill()
+        private void startBlackLiquorFill()
         {
             BlackLiquorThread = new Thread(() =>
             {
                 EM3_OP2();
                 EM5_OP1();
                 EM4_OP1();
-                Console.WriteLine("EM4_OP1");
                 // Wait for LI400 to drop below 35
                 while (true) {
                     if(listener.getInt("LI400") < 35) break;
                     else Thread.Sleep(LOOP_TIME);
                 }
-                Console.WriteLine("LI400 below 35");
                 EM3_OP6();
                 EM5_OP3();
                 EM4_OP2();
 
-                //Start whiteliquor
+                // Start whiteliquor
                 startWhiteLiquorFill();
             });
             BlackLiquorThread.IsBackground = true;
             BlackLiquorThread.Start();
         }
 
-        public void startWhiteLiquorFill()
+        private void startWhiteLiquorFill()
         {
             WhiteLiquorThread = new Thread(() =>
             {
@@ -213,17 +238,16 @@ namespace ASE6030
                     if (listener.getInt("LI400") > 80) break;
                     else Thread.Sleep(LOOP_TIME);
                 }
-                Console.WriteLine("LI400 above 80");
                 EM3_OP6();
                 EM1_OP4();
-                startCooking(23.00, 100);
+                startCooking();
 
             });
             WhiteLiquorThread.IsBackground = true;
             WhiteLiquorThread.Start();
         }
 
-        public void startCooking(double cookingTemperature, int Tc)
+        private void startCooking()
         {
             CookingThread = new Thread(() =>
             {
@@ -232,7 +256,7 @@ namespace ASE6030
 
                 while (true)
                 {
-                    if (listener.getDouble("TI300") >= cookingTemperature) break;
+                    if (listener.getDouble("TI300") >= parameters.cookingTemperature) break;
                     else Thread.Sleep(LOOP_TIME);
                 }
 
@@ -255,18 +279,17 @@ namespace ASE6030
             CookingThread.Start();
         }
 
-        public void discharge()
+        private void discharge()
         {
             EM5_OP2();
             EM3_OP5();
 
-            //Wait for LS-300 to deactivate
+            // Wait for LS-300 to deactivate
             while(true)
             {
                 if (!listener.getBool("LS-300")) break;
                 else Thread.Sleep(LOOP_TIME);
             }
-            Console.WriteLine("LS-300 deactivated");
 
             EM5_OP4();
             EM3_OP7();
@@ -274,7 +297,7 @@ namespace ASE6030
             
         }
 
-        //Open route to digester/T300, pump and heat
+        // Open route to digester/T300, pump and heat
         private void EM1_OP1()
         {
             v102.open();
@@ -283,14 +306,14 @@ namespace ASE6030
 
             e100.turnOn();
         }
-        //Open route to digester/T300 and pump
+        // Open route to digester/T300 and pump
         private void EM1_OP2()
         {
             v102.open();
             v304.open();
             p100.turnOn();
         }
-        //Close route to digester/T300, pump and heater off
+        // Close route to digester/T300, pump and heater off
         private void EM1_OP3()
         {
             v102.close();
@@ -299,7 +322,7 @@ namespace ASE6030
 
             e100.turnOff();
         }
-        //Close route to digester/T300 and pump off
+        // Close route to digester/T300 and pump off
         private void EM1_OP4()
         {
             v102.close();
@@ -407,20 +430,14 @@ namespace ASE6030
 
         private void U1_OP1()
         {
-            //tba
-            Console.WriteLine("U1_OP1: Throttling v104 aggresively");
             // Wórks fine with integrationTime=controlTime
-            v104.startPI(0.2, 0, 100, 100, 100, 30);
+            //v104.startPI(0.2, 0, 100, 100, 100, 30);
+            v104.startPI(parameters.gain, parameters.cookingPressure, parameters.integrationTime*1000, LOOP_TIME, parameters.cookingTime);
         }
         private void U1_OP2()
         {
-            //tba
-            Console.WriteLine("U1_OP2: Heating stuff with E100");
-            e100.regulate(23, "TI300", 30);
-            Console.WriteLine("U1_OP2: Done regulating stuff");
-
-
-
+            //  e100.regulate(23, "TI300", 30);
+            e100.regulate(parameters.cookingTemperature, "TI300", parameters.cookingTime, LOOP_TIME);
         }
         private void U1_OP3()
         {
@@ -431,39 +448,10 @@ namespace ASE6030
             e100.turnOff();
         }
 
-/*
-        public void valveOpen()
+        private void Err(string e)
         {
-            Console.WriteLine();
-            Console.WriteLine("Valve open");
-            Console.WriteLine(client.ToString());
-
-            client.setValveOpening("V102", 100);
-            client.setOnOffItem("V304", true);
-            client.setOnOffItem("V301", true);
-            client.setOnOffItem("V204", true);
-        }
-
-        public void valveClose()
-        {
-    //        client.setValveOpening("V102", 0);
-  //          client.setOnOffItem("V304", false);
-//            client.setOnOffItem("V301", false);
-            client.setOnOffItem("V204", false);
+            throw new Exception("Error: " + e);
 
         }
-        
-        public void pumpOn()
-        {
-            e100.turnOn();            
-        }
-        public void pumpOff()
-        {
-            Console.WriteLine(listener.getInt("PI300"));
-            v104.startPI(0.2, 0, 100, 5, 1, 30);
-
-        }
-        */
-
     }
 }

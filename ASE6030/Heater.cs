@@ -33,7 +33,7 @@ namespace ASE6030
             isOn = false;
         }
 
-        public void regulate(double targetTemp, string targetDevice, int Tc)
+        public void regulate(double targetTemp, string targetDevice, int Tc, int controlTime)
         {
             double currentTemp;
             var startTime = DateTime.UtcNow;
@@ -43,7 +43,7 @@ namespace ASE6030
                 if (currentTemp < targetTemp && !isOn) turnOn();
                 else if (currentTemp >= targetTemp && isOn) turnOff();
  
-                Thread.Sleep(100);
+                Thread.Sleep(controlTime);
             }
         }
     }

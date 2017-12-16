@@ -41,41 +41,44 @@ namespace ASE6030
 
         private void setParameters()
         {
+            // Type check
             try
             {
                 parameters.impregnationTime = int.Parse(ImpregnationInput.Text);
                 parameters.cookingTime = int.Parse(CookingTimeInput.Text);
-                parameters.cookingTemperature = int.Parse(CookingTemperatureInput.Text);
+                parameters.cookingTemperature = double.Parse(CookingTemperatureInput.Text);
                 parameters.cookingPressure = int.Parse(CookingPressureInput.Text);
 
                 parameters.gain = double.Parse(GainInput.Text);
                 parameters.integrationTime = double.Parse(IntegrationTimeInput.Text);
- 
+                
             } catch
             {
-                Err("Incorrect input values!");
+                Err("Incorrect input type!");
             }
 
-            if (parameters.impregnationTime <= 0 || parameters.impregnationTime > 60) Err("Check impregnation time");
-            else if (parameters.cookingTime < 0 || parameters.cookingTime > 100) Err("Check cooking time");
-            else if (parameters.cookingTemperature < 20 || parameters.cookingTemperature > 80) Err("Check cooking temperature");
-            else if (parameters.cookingPressure < 0 || parameters.cookingPressure > 350) Err("Check cooking pressure");
-            else if (parameters.gain < 0 || parameters.gain > 1) Err("Check gain");
-            else if (parameters.integrationTime < 0 || parameters.integrationTime > 1) Err("Check integration time");
-            else return;
-
+            // Controller handles value check
+            try
+            {
+                controller.setParams(parameters);
+            } catch (Exception e)
+            {
+                Err(e.Message);
+            }
         }
+
         private void Err(string e)
         {
             System.Windows.MessageBox.Show(e);
             throw new Exception("Error: " + e);
         }
         
-        private void Impregnation_Click(object sender, RoutedEventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 setParameters();
+                
                 controller.startImpregnation();
                 AbortButton.IsEnabled = true;
                 StartButton.IsEnabled = false;
@@ -88,7 +91,6 @@ namespace ASE6030
 
         private void AbortImpregnation_Click(object sender, RoutedEventArgs e)
         {
-            setParameters();
             controller.abortImpregnation();
         }
 
@@ -144,11 +146,18 @@ namespace ASE6030
             // Tanks
             LI100.Content = state["LI100"].ToString() + " mm";
             T100Fill.Height = state["LI100"]/2;
+            TI100.Content = state["TI100"].ToString("N2") + " C";
+            LA100.Background = state["LA+100"] ? GREEN : RED;
 
             LI200.Content = state["LI200"].ToString() + " mm";
             T200Fill.Height = state["LI200"]/3.5;
+            LS_200.Background = state["LS-200"] ? GREEN : RED;
+
             PI300.Content = state["PI300"].ToString() + " bar";
             TI300.Content = state["TI300"].ToString("N2") + " C";
+            LS300.Background = state["LS+300"] ? GREEN : RED;
+            LS_300.Background = state["LS-300"] ? GREEN : RED;
+
             LI400.Content = state["LI400"].ToString() + " mm";
             T400Fill.Height = state["LI400"]/3.5;
 
@@ -172,6 +181,9 @@ namespace ASE6030
             // Pumps
             P100.Background = state["P100"] > 0 ? GREEN : RED;
             P200.Background = state["P200"] > 0 ? GREEN : RED;
+
+            // Heater
+            E100.Background = state["E100"] ? GREEN : RED;
 
 
         }
