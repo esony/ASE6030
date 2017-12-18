@@ -97,10 +97,15 @@ namespace ASE6030
             try
             {
                 setParameters();
-                
-                controller.startImpregnation();
+                controller.startSequence();
                 AbortButton.IsEnabled = true;
                 StartButton.IsEnabled = false;
+                ImpregnationInput.IsEnabled = false;
+                CookingTimeInput.IsEnabled = false;
+                CookingTemperatureInput.IsEnabled = false;
+                CookingPressureInput.IsEnabled = false;
+                IntegrationTimeInput.IsEnabled = false;
+                GainInput.IsEnabled = false;
 
             } catch (Exception error)
             {
@@ -108,9 +113,9 @@ namespace ASE6030
             }
         }
 
-        private void AbortImpregnation_Click(object sender, RoutedEventArgs e)
+        private void AbortButton_Click(object sender, RoutedEventArgs e)
         {
-            controller.abortImpregnation();
+            controller.abortSequence();
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
@@ -185,6 +190,7 @@ namespace ASE6030
             V102.Background = state["V102"] == 100 ? GREEN : RED;
             V103.Background = state["V103"] ? GREEN : RED;
             V104.Background = state["V104"] > 0 ? GREEN : RED;
+            V104Value.Content = state["V104"].ToString() + "%";
 
             V201.Background = state["V201"] ? GREEN : RED;
             V204.Background = state["V204"] ? GREEN : RED;
@@ -205,6 +211,34 @@ namespace ASE6030
             E100.Background = state["E100"] ? GREEN : RED;
 
 
+        }
+
+        public void updateProcessFlow(int step)
+        {
+            Dispatcher.BeginInvoke((Action)(() => updateProcessView(step)));
+        }
+
+        private void updateProcessView(int step)
+        {
+            Step1.Background = RED;
+            Step2.Background = RED;
+            Step3.Background = RED;
+            Step4.Background = RED;
+            Step5.Background = RED;
+            if (step != 0) {
+                Label lbl = (Label)FindName("Step" + step.ToString());
+                lbl.Background = GREEN;
+            } else
+            {
+                AbortButton.IsEnabled = false;
+                StartButton.IsEnabled = true;
+                ImpregnationInput.IsEnabled = true;
+                CookingTimeInput.IsEnabled = true;
+                CookingTemperatureInput.IsEnabled = true;
+                CookingPressureInput.IsEnabled = true;
+                IntegrationTimeInput.IsEnabled = true;
+                GainInput.IsEnabled = true;
+            }
         }
 
         private void DeviceRadioButton_Checked(object sender, RoutedEventArgs e)

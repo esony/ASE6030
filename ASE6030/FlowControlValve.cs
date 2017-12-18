@@ -27,6 +27,7 @@ namespace ASE6030
             this.pValue = 0;
             this.iValue = 0;
             this.targetValue = 0;
+            this.piThread = new Thread(()=> {});
         }
 
         //pValue 0-1, targertValue 0-350, integrationTime ms, controlPeriod ms, executionTime s
@@ -34,25 +35,47 @@ namespace ASE6030
         {
             piThread = new Thread(() =>
             {
-                this.pValue = pValue;
-                this.iValue = 0;
-                this.targetValue = targetValue;
-                this.integrationTime = integrationTime;
-                this.controlPeriod = controlPeriod;
-
-                //Loop for time Tc
-                // Tc = cooking time
-                var startTime = DateTime.UtcNow;
-                while (DateTime.UtcNow - startTime < TimeSpan.FromSeconds(executionTime))
+                try
                 {
-                    client.setValveOpening(name, control());
-                    Thread.Sleep((int)controlPeriod);
+                    this.pValue = pValue;
+                    this.iValue = 0;
+                    this.targetValue = targetValue;
+                    this.integrationTime = integrationTime;
+                    this.controlPeriod = controlPeriod;
+
+                    //Loop for time Tc
+                    // Tc = cooking time
+                    var startTime = DateTime.UtcNow;
+                    while (DateTime.UtcNow - startTime < TimeSpan.FromSeconds(executionTime))
+                    {
+                        client.setValveOpening(name, control());
+                        Thread.Sleep((int)controlPeriod);
+                    }
+                    Console.WriteLine("Done with PI");
+                } catch (ThreadAbortException)
+                {
+                    Console.WriteLine("PI Controller shutdown");
                 }
-                Console.WriteLine("Done with PI");
             });
             piThread.IsBackground = true;
             piThread.Start();
 
+        }
+
+        /// Returns true if PI controller thread is alive = PI controller is on, false if not.
+        public bool isAlive()
+        {
+            return piThread.IsAlive;
+        }
+
+        /// Shuts down PI controller
+        public void shutDown()
+        {
+            if (piThread.IsAlive)
+            {
+                Console.WriteLine("Killing PI");
+                piThread.Abort();
+            }
         }
 
         private int control()
@@ -97,6 +120,7 @@ namespace ASE6030
         public void close()
         {
             //Do stuff
+            shutDown();
             client.setValveOpening(name, 0);
         }
     }

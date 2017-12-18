@@ -1,0 +1,71 @@
+\hypertarget{class_a_s_e6030_1_1_controller}{}\section{A\+S\+E6030.\+Controller Class Reference}
+\label{class_a_s_e6030_1_1_controller}\index{A\+S\+E6030.\+Controller@{A\+S\+E6030.\+Controller}}
+
+
+This is the controller logic  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_s_e6030_1_1_controller_aa7df468c34d983c6efe88f12abeffb79}{Controller} (\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window} window)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_controller_a5f84e69b4885c561df4bc177fcc54d40}{connect\+Client} (string U\+RL)
+\begin{DoxyCompactList}\small\item\em Connect to selected client. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_afee09ba01da47aa772ce3da642e08e47}\label{class_a_s_e6030_1_1_controller_afee09ba01da47aa772ce3da642e08e47}} 
+void {\bfseries set\+Params} (\hyperlink{class_a_s_e6030_1_1_sequence_parameters}{Sequence\+Parameters} parameters)
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_afca76c3628ed37f21c1aac044a5e0441}\label{class_a_s_e6030_1_1_controller_afca76c3628ed37f21c1aac044a5e0441}} 
+void {\bfseries start\+Sequence} ()
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_aaad2a679e6a2f5db4193f58fd7482def}\label{class_a_s_e6030_1_1_controller_aaad2a679e6a2f5db4193f58fd7482def}} 
+void {\bfseries start\+Impregnation} ()
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_ab508adee38f1120e4213efd9104480cf}\label{class_a_s_e6030_1_1_controller_ab508adee38f1120e4213efd9104480cf}} 
+void {\bfseries abort\+Impregnation} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_a36785106c3f4bc54402290b0d86911fc}\label{class_a_s_e6030_1_1_controller_a36785106c3f4bc54402290b0d86911fc}} 
+Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client {\bfseries client}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_a8cc31711b16a81099afb9ad6125d1d0f}\label{class_a_s_e6030_1_1_controller_a8cc31711b16a81099afb9ad6125d1d0f}} 
+\hyperlink{class_a_s_e6030_1_1_listener}{Listener} {\bfseries listener}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the controller logic 
+
+Uses Tut.\+Mpp\+Opc\+Ua\+Client\+Lib library to connect to the process 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_aa7df468c34d983c6efe88f12abeffb79}\label{class_a_s_e6030_1_1_controller_aa7df468c34d983c6efe88f12abeffb79}} 
+\index{A\+S\+E6030\+::\+Controller@{A\+S\+E6030\+::\+Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!A\+S\+E6030\+::\+Controller@{A\+S\+E6030\+::\+Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily A\+S\+E6030.\+Controller.\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Takes the main window as a parameter. Used to send update calls for G\+UI 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_controller_a5f84e69b4885c561df4bc177fcc54d40}\label{class_a_s_e6030_1_1_controller_a5f84e69b4885c561df4bc177fcc54d40}} 
+\index{A\+S\+E6030\+::\+Controller@{A\+S\+E6030\+::\+Controller}!connect\+Client@{connect\+Client}}
+\index{connect\+Client@{connect\+Client}!A\+S\+E6030\+::\+Controller@{A\+S\+E6030\+::\+Controller}}
+\subsubsection{\texorpdfstring{connect\+Client()}{connectClient()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Controller.\+connect\+Client (\begin{DoxyParamCaption}\item[{string}]{U\+RL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connect to selected client. 
+
+Parameter \char`\"{}\+U\+R\+L\char`\"{} must be either \char`\"{}\+D\+E\+V\+I\+C\+E\char`\"{} or \char`\"{}\+S\+I\+M\+U\+L\+A\+T\+O\+R\char`\"{}. No other inputs supported for now. Simulator and device U\+R\+Ls hard-\/coded into controller. Support for other U\+R\+Ls can be added later. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+A\+S\+E6030/Controller.\+cs\end{DoxyCompactItemize}
