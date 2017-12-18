@@ -38,7 +38,26 @@ namespace ASE6030
             RED = new SolidColorBrush();
             RED.Color = Colors.OrangeRed;
         }
+        /*
+        private void test()
+        {
+            SortedDictionary<string, dynamic> asd = new SortedDictionary<string, dynamic>();
+            asd["A"] = "asd";
+            asd["B"] = 1;
+            asd["C"] = true;
+            test2(new SortedDictionary<string, dynamic>(asd));
+            Console.WriteLine(asd["A"]);
+            Console.WriteLine(asd["B"]);
+            Console.WriteLine(asd["C"]);
 
+        }
+        private void test2(SortedDictionary<string, dynamic> dsa)
+        {
+            dsa["A"] = "Vityns";
+            dsa["B"] = 2;
+            dsa["C"] = false;
+        }
+        */
         private void setParameters()
         {
             // Type check
@@ -107,7 +126,7 @@ namespace ASE6030
                 ConnectButton.IsEnabled = false;
                 SimulatorRadioButton.IsEnabled = false;
                 DeviceRadioButton.IsEnabled = false;
-
+                
             } catch {
                 System.Windows.MessageBox.Show("Error connecting!");
             }

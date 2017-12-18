@@ -12,7 +12,7 @@ namespace ASE6030
     {
         private UaLib.MppClient m_mppClient = null;
         private MainWindow window;
-        private bool connection;
+        private object lock1 = new object();
         //Let it slide
         private SortedDictionary<string, dynamic> storage;
         private string[] INT_ITEMS = new string[] {
@@ -47,22 +47,30 @@ namespace ASE6030
         {
             storage = new SortedDictionary<string, dynamic>();
             this.window = window;
-            connection = false;
         }
 
         public int getInt(string key) {
             // Error handling
-            return storage[key];
+            lock (lock1)
+            {
+                return storage[key];
+            }
         }
 
         public double getDouble(string key) {
             // Error handling
-            return storage[key];
+            lock (lock1)
+            {
+                return storage[key];
+            }
         }
 
         public bool getBool(string key){
             // Error handling
-            return storage[key];
+            lock (lock1)
+            {
+                return storage[key];
+            }
         }
 
         public void connect(string url)
@@ -109,7 +117,6 @@ namespace ASE6030
             {
                 System.Windows.MessageBox.Show("CONNECTION LOST" + "\n" + "Reconnecting");
             }
-            Console.WriteLine("LOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOST");
         }
 
         private void m_mppClient_ProcessItemsChanged(object source,
@@ -124,7 +131,10 @@ namespace ASE6030
                     {
                         var valueObject = (UaLib.MppValueInt)args.ChangedItems[key];
                         var actualValue = valueObject.Value;
-                        storage[key] = actualValue;
+                        lock (lock1)
+                        {
+                            storage[key] = actualValue;
+                        }
                         
                         //Console.WriteLine(key + ": " + storage[key]);
                     }
@@ -132,14 +142,20 @@ namespace ASE6030
                     {
                         var valueObject = (UaLib.MppValueBool)args.ChangedItems[key];
                         var actualValue = valueObject.Value;
-                        storage[key] = actualValue;
+                        lock (lock1)
+                        {
+                            storage[key] = actualValue;
+                        }
                         //Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(DOUBLE_ITEMS, element => element == key))
                     {
                         var valueObject = (UaLib.MppValueDouble)args.ChangedItems[key];
                         var actualValue = valueObject.Value;
-                        storage[key] = actualValue;
+                        lock (lock1)
+                        {
+                            storage[key] = actualValue;
+                        }
                     //    Console.WriteLine(key + ": " + storage[key]);
                     }
                     else
@@ -147,7 +163,8 @@ namespace ASE6030
                         Console.WriteLine("Wrong values from simulator");
                     }
                 }
-                window.updateCall(storage);
+                // A _copy_ of storage for the updateCall
+                window.updateCall(new SortedDictionary<string, dynamic>(storage));
             }
             catch (Exception e)
             {

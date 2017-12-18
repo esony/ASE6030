@@ -11,7 +11,6 @@ namespace ASE6030
         private String name;
         private bool isOn;
         private Tut.MppOpcUaClientLib.MppClient client;
-        //private Thread regulatorThread;
         private Listener listener;
 
         public Heater(String name, ref Tut.MppOpcUaClientLib.MppClient client, ref Listener listener)
