@@ -65,27 +65,260 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_a_s_e6030_1_1_heater-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ASE6030.Heater Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for controlling on/off heater element  
+ <a href="class_a_s_e6030_1_1_heater.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c0420d0f56eb7e1a7d43c44520ae07b"><td class="memItemLeft" align="right" valign="top"><a id="a1c0420d0f56eb7e1a7d43c44520ae07b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Heater</b> (String name, ref Tut.MppOpcUaClientLib.MppClient client, ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a> listener)</td></tr>
+<tr class="memitem:a1c0420d0f56eb7e1a7d43c44520ae07b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a1c0420d0f56eb7e1a7d43c44520ae07b">Heater</a> (String <a class="el" href="class_a_s_e6030_1_1_heater.html#a0f7ba6c365f98047a0e8e7f3017fafab">name</a>, ref Tut.MppOpcUaClientLib.MppClient client, ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a> listener)</td></tr>
 <tr class="separator:a1c0420d0f56eb7e1a7d43c44520ae07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ef024666587dbe494c647214658b412"><td class="memItemLeft" align="right" valign="top"><a id="a0ef024666587dbe494c647214658b412"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>turnOn</b> ()</td></tr>
+<tr class="memitem:a0ef024666587dbe494c647214658b412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a0ef024666587dbe494c647214658b412">turnOn</a> ()</td></tr>
+<tr class="memdesc:a0ef024666587dbe494c647214658b412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn heater on.  <a href="#a0ef024666587dbe494c647214658b412">More...</a><br /></td></tr>
 <tr class="separator:a0ef024666587dbe494c647214658b412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38a0281112b0ab7d5922e52d0a2cecec"><td class="memItemLeft" align="right" valign="top"><a id="a38a0281112b0ab7d5922e52d0a2cecec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>turnOff</b> ()</td></tr>
+<tr class="memitem:a38a0281112b0ab7d5922e52d0a2cecec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a38a0281112b0ab7d5922e52d0a2cecec">turnOff</a> ()</td></tr>
+<tr class="memdesc:a38a0281112b0ab7d5922e52d0a2cecec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn heater off.  <a href="#a38a0281112b0ab7d5922e52d0a2cecec">More...</a><br /></td></tr>
 <tr class="separator:a38a0281112b0ab7d5922e52d0a2cecec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b695a9e9acf4ae4947bf3a968c8e6e3"><td class="memItemLeft" align="right" valign="top"><a id="a6b695a9e9acf4ae4947bf3a968c8e6e3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>regulate</b> (double targetTemp, string targetDevice, int Tc, int controlTime)</td></tr>
+<tr class="memitem:a6b695a9e9acf4ae4947bf3a968c8e6e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a6b695a9e9acf4ae4947bf3a968c8e6e3">regulate</a> (double targetTemp, string targetDevice, int Tc, int controlTime)</td></tr>
+<tr class="memdesc:a6b695a9e9acf4ae4947bf3a968c8e6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the heater to regulate the defined target temperature targetTemp at thermometer targetDevice, for time controlTime  <a href="#a6b695a9e9acf4ae4947bf3a968c8e6e3">More...</a><br /></td></tr>
 <tr class="separator:a6b695a9e9acf4ae4947bf3a968c8e6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0f7ba6c365f98047a0e8e7f3017fafab"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a0f7ba6c365f98047a0e8e7f3017fafab">name</a></td></tr>
+<tr class="separator:a0f7ba6c365f98047a0e8e7f3017fafab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5b6ffba44e01c20fede806bf409414"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_heater.html#a1f5b6ffba44e01c20fede806bf409414">isOn</a></td></tr>
+<tr class="separator:a1f5b6ffba44e01c20fede806bf409414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347875f91c3ddb3c6ddc6f86baa3cc5f"><td class="memItemLeft" align="right" valign="top"><a id="a347875f91c3ddb3c6ddc6f86baa3cc5f"></a>
+Tut.MppOpcUaClientLib.MppClient&#160;</td><td class="memItemRight" valign="bottom"><b>client</b></td></tr>
+<tr class="separator:a347875f91c3ddb3c6ddc6f86baa3cc5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c1090f9af468be9713984536f753b3"><td class="memItemLeft" align="right" valign="top"><a id="a08c1090f9af468be9713984536f753b3"></a>
+<a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a>&#160;</td><td class="memItemRight" valign="bottom"><b>listener</b></td></tr>
+<tr class="separator:a08c1090f9af468be9713984536f753b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for controlling on/off heater element </p>
+<p>Creates an object instance of a heater element. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1c0420d0f56eb7e1a7d43c44520ae07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0420d0f56eb7e1a7d43c44520ae07b">&#9670;&nbsp;</a></span>Heater()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ASE6030.Heater.Heater </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref Tut.MppOpcUaClientLib.MppClient&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a>&#160;</td>
+          <td class="paramname"><em>listener</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name (code) of the device</td></tr>
+    <tr><td class="paramname">client</td><td>Reference to MppClient object</td></tr>
+    <tr><td class="paramname">listener</td><td>Reference to <a class="el" href="class_a_s_e6030_1_1_listener.html" title="Class listening for changes in the system ">Listener</a> object</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6b695a9e9acf4ae4947bf3a968c8e6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b695a9e9acf4ae4947bf3a968c8e6e3">&#9670;&nbsp;</a></span>regulate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Heater.regulate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetTemp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>targetDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Tc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>controlTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the heater to regulate the defined target temperature targetTemp at thermometer targetDevice, for time controlTime </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetTemp</td><td>Target temperature</td></tr>
+    <tr><td class="paramname">targetDevice</td><td>Which thermometer to fetch the current temperature from</td></tr>
+    <tr><td class="paramname">Tc</td><td>Control interval in seconds. Determines how often the thermostate checks the current temperature and, if needed, switches the heater on/off</td></tr>
+    <tr><td class="paramname">controlTime</td><td>Control time defines how long the regulator is running</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a38a0281112b0ab7d5922e52d0a2cecec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a0281112b0ab7d5922e52d0a2cecec">&#9670;&nbsp;</a></span>turnOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Heater.turnOff </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn heater off. </p>
+<p>Sends signal to simulator/device to turn off the heater. </p>
+
+</div>
+</div>
+<a id="a0ef024666587dbe494c647214658b412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef024666587dbe494c647214658b412">&#9670;&nbsp;</a></span>turnOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Heater.turnOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn heater on. </p>
+<p>Sends signal to simulator/device to turn on the heater. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1f5b6ffba44e01c20fede806bf409414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5b6ffba44e01c20fede806bf409414">&#9670;&nbsp;</a></span>isOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ASE6030.Heater.isOn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tells whether the heater is on or not. Used internally when regulating temperature. </p>
+
+</div>
+</div>
+<a id="a0f7ba6c365f98047a0e8e7f3017fafab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7ba6c365f98047a0e8e7f3017fafab">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ASE6030.Heater.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Name of the device to be controlled </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>ASE6030/Heater.cs</li>
 </ul>

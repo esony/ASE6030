@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main',['Main',['../class_a_s_e6030_1_1_app.html#abf70d608fded53409f9aff64e8a723b3',1,'ASE6030.App.Main()'],['../class_a_s_e6030_1_1_app.html#abf70d608fded53409f9aff64e8a723b3',1,'ASE6030.App.Main()'],['../class_a_s_e6030_1_1_app.html#abf70d608fded53409f9aff64e8a723b3',1,'ASE6030.App.Main()']]],
-  ['mainwindow',['MainWindow',['../class_a_s_e6030_1_1_main_window.html',1,'ASE6030']]]
+  ['heater',['Heater',['../class_a_s_e6030_1_1_heater.html',1,'ASE6030.Heater'],['../class_a_s_e6030_1_1_heater.html#a1c0420d0f56eb7e1a7d43c44520ae07b',1,'ASE6030.Heater.Heater()']]]
 ];

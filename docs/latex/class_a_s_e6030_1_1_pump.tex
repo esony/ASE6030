@@ -1,20 +1,88 @@
 \hypertarget{class_a_s_e6030_1_1_pump}{}\section{A\+S\+E6030.\+Pump Class Reference}
 \label{class_a_s_e6030_1_1_pump}\index{A\+S\+E6030.\+Pump@{A\+S\+E6030.\+Pump}}
+
+
+Class for controlling a pump  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_ac23356a1375f9dc895beeb922721635d}\label{class_a_s_e6030_1_1_pump_ac23356a1375f9dc895beeb922721635d}} 
-{\bfseries Pump} (String name, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client)
+\hyperlink{class_a_s_e6030_1_1_pump_ac23356a1375f9dc895beeb922721635d}{Pump} (String name, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_pump_a80e39e01a6a3fdf187f743991004c4ed}{turn\+On} ()
+\begin{DoxyCompactList}\small\item\em Set pump preset and turn on the pump \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_pump_aeaca891e7c6220bf12e070c4096c8140}{turn\+Off} ()
+\begin{DoxyCompactList}\small\item\em Turn on the pump \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_pump_a25c0c51e6e9fbddecdf94f3523b971ad}{set\+Preset} ()
+\begin{DoxyCompactList}\small\item\em Set pump preset \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_a80e39e01a6a3fdf187f743991004c4ed}\label{class_a_s_e6030_1_1_pump_a80e39e01a6a3fdf187f743991004c4ed}} 
-void {\bfseries turn\+On} ()
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_a09dc94d351629e5efcb4def9010262ee}\label{class_a_s_e6030_1_1_pump_a09dc94d351629e5efcb4def9010262ee}} 
+String {\bfseries name}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_aeaca891e7c6220bf12e070c4096c8140}\label{class_a_s_e6030_1_1_pump_aeaca891e7c6220bf12e070c4096c8140}} 
-void {\bfseries turn\+Off} ()
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_a25c0c51e6e9fbddecdf94f3523b971ad}\label{class_a_s_e6030_1_1_pump_a25c0c51e6e9fbddecdf94f3523b971ad}} 
-void {\bfseries set\+Preset} ()
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_af912aa8b7a6cb3a91aebbb1b3c6092f9}\label{class_a_s_e6030_1_1_pump_af912aa8b7a6cb3a91aebbb1b3c6092f9}} 
+Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client {\bfseries client}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for controlling a pump 
+
+Creates an object instance of a pump that can be used to control the pump. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_ac23356a1375f9dc895beeb922721635d}\label{class_a_s_e6030_1_1_pump_ac23356a1375f9dc895beeb922721635d}} 
+\index{A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}!Pump@{Pump}}
+\index{Pump@{Pump}!A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}}
+\subsubsection{\texorpdfstring{Pump()}{Pump()}}
+{\footnotesize\ttfamily A\+S\+E6030.\+Pump.\+Pump (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name (code) of the corresponding device. Example\+: \char`\"{}\+P100\char`\"{}\\
+\hline
+{\em client} & Reference to Mpp\+Client object\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_a25c0c51e6e9fbddecdf94f3523b971ad}\label{class_a_s_e6030_1_1_pump_a25c0c51e6e9fbddecdf94f3523b971ad}} 
+\index{A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}!set\+Preset@{set\+Preset}}
+\index{set\+Preset@{set\+Preset}!A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}}
+\subsubsection{\texorpdfstring{set\+Preset()}{setPreset()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Pump.\+set\+Preset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set pump preset 
+
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_aeaca891e7c6220bf12e070c4096c8140}\label{class_a_s_e6030_1_1_pump_aeaca891e7c6220bf12e070c4096c8140}} 
+\index{A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}!turn\+Off@{turn\+Off}}
+\index{turn\+Off@{turn\+Off}!A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}}
+\subsubsection{\texorpdfstring{turn\+Off()}{turnOff()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Pump.\+turn\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Turn on the pump 
+
+\mbox{\Hypertarget{class_a_s_e6030_1_1_pump_a80e39e01a6a3fdf187f743991004c4ed}\label{class_a_s_e6030_1_1_pump_a80e39e01a6a3fdf187f743991004c4ed}} 
+\index{A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}!turn\+On@{turn\+On}}
+\index{turn\+On@{turn\+On}!A\+S\+E6030\+::\+Pump@{A\+S\+E6030\+::\+Pump}}
+\subsubsection{\texorpdfstring{turn\+On()}{turnOn()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Pump.\+turn\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set pump preset and turn on the pump 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

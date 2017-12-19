@@ -65,27 +65,229 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_a_s_e6030_1_1_flow_control_valve-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ASE6030.FlowControlValve Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for controlling a flow control valve  
+ <a href="class_a_s_e6030_1_1_flow_control_valve.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30ba36af47913e18552ee88461ad70b7"><td class="memItemLeft" align="right" valign="top"><a id="a30ba36af47913e18552ee88461ad70b7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FlowControlValve</b> (String name, ref Tut.MppOpcUaClientLib.MppClient client, ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a> listener)</td></tr>
+<tr class="memitem:a30ba36af47913e18552ee88461ad70b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a30ba36af47913e18552ee88461ad70b7">FlowControlValve</a> (String name, ref Tut.MppOpcUaClientLib.MppClient client, ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a> listener)</td></tr>
+<tr class="memdesc:a30ba36af47913e18552ee88461ad70b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor  <a href="#a30ba36af47913e18552ee88461ad70b7">More...</a><br /></td></tr>
 <tr class="separator:a30ba36af47913e18552ee88461ad70b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a92ca1afb6da92e55a652e07361fd56"><td class="memItemLeft" align="right" valign="top"><a id="a0a92ca1afb6da92e55a652e07361fd56"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startPI</b> (double pValue, double targetValue, double integrationTime, double controlPeriod, int executionTime)</td></tr>
+<tr class="memitem:a0a92ca1afb6da92e55a652e07361fd56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a0a92ca1afb6da92e55a652e07361fd56">startPI</a> (double pValue, double targetValue, double integrationTime, double controlPeriod, int executionTime)</td></tr>
+<tr class="memdesc:a0a92ca1afb6da92e55a652e07361fd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the PI controller for valve.  <a href="#a0a92ca1afb6da92e55a652e07361fd56">More...</a><br /></td></tr>
 <tr class="separator:a0a92ca1afb6da92e55a652e07361fd56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d3c7db594ce3676397ef66c4839991"><td class="memItemLeft" align="right" valign="top"><a id="a40d3c7db594ce3676397ef66c4839991"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a40d3c7db594ce3676397ef66c4839991">isAlive</a> ()</td></tr>
+<tr class="memdesc:a40d3c7db594ce3676397ef66c4839991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if PI controller thread is alive = PI controller is on, false if not. <br /></td></tr>
+<tr class="separator:a40d3c7db594ce3676397ef66c4839991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97127ac85cda57ed8f6da68b4647700f"><td class="memItemLeft" align="right" valign="top"><a id="a97127ac85cda57ed8f6da68b4647700f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a97127ac85cda57ed8f6da68b4647700f">shutDown</a> ()</td></tr>
+<tr class="memdesc:a97127ac85cda57ed8f6da68b4647700f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down PI controller. <br /></td></tr>
+<tr class="separator:a97127ac85cda57ed8f6da68b4647700f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12db565b5451a4a7ee1e13ac7f031d00"><td class="memItemLeft" align="right" valign="top"><a id="a12db565b5451a4a7ee1e13ac7f031d00"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>open</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a12db565b5451a4a7ee1e13ac7f031d00">open</a> ()</td></tr>
+<tr class="memdesc:a12db565b5451a4a7ee1e13ac7f031d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fully open the valve. <br /></td></tr>
 <tr class="separator:a12db565b5451a4a7ee1e13ac7f031d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b22d19ca0ed6eb60f31705f2ee36dd7"><td class="memItemLeft" align="right" valign="top"><a id="a4b22d19ca0ed6eb60f31705f2ee36dd7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a4b22d19ca0ed6eb60f31705f2ee36dd7">close</a> ()</td></tr>
+<tr class="memdesc:a4b22d19ca0ed6eb60f31705f2ee36dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fully close the valve, shut down PI controller if on. <br /></td></tr>
 <tr class="separator:a4b22d19ca0ed6eb60f31705f2ee36dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a89cfb29a75e92e322943b6d7ca780436"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html#a89cfb29a75e92e322943b6d7ca780436">control</a> ()</td></tr>
+<tr class="memdesc:a89cfb29a75e92e322943b6d7ca780436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the new control value from feedback measurement.  <a href="#a89cfb29a75e92e322943b6d7ca780436">More...</a><br /></td></tr>
+<tr class="separator:a89cfb29a75e92e322943b6d7ca780436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1c1b36660b9d0288a41f173e4e24a371"><td class="memItemLeft" align="right" valign="top"><a id="a1c1b36660b9d0288a41f173e4e24a371"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="separator:a1c1b36660b9d0288a41f173e4e24a371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf013a1a722109453a0306efe5674003"><td class="memItemLeft" align="right" valign="top"><a id="acf013a1a722109453a0306efe5674003"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>piThread</b></td></tr>
+<tr class="separator:acf013a1a722109453a0306efe5674003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d0062cb8eb2a377e5e885548dc0fb2"><td class="memItemLeft" align="right" valign="top"><a id="ad9d0062cb8eb2a377e5e885548dc0fb2"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>pValue</b></td></tr>
+<tr class="separator:ad9d0062cb8eb2a377e5e885548dc0fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214515a2c9d307c47526c12136288441"><td class="memItemLeft" align="right" valign="top"><a id="a214515a2c9d307c47526c12136288441"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>iValue</b></td></tr>
+<tr class="separator:a214515a2c9d307c47526c12136288441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a2b8b7da02c7b270c1c4c7732c7a58"><td class="memItemLeft" align="right" valign="top"><a id="ac1a2b8b7da02c7b270c1c4c7732c7a58"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>targetValue</b></td></tr>
+<tr class="separator:ac1a2b8b7da02c7b270c1c4c7732c7a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc49afca675d00afd0654e813e1e2ace"><td class="memItemLeft" align="right" valign="top"><a id="afc49afca675d00afd0654e813e1e2ace"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>integrationTime</b></td></tr>
+<tr class="separator:afc49afca675d00afd0654e813e1e2ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225f0f413ca5074e534a643a9b4c2977"><td class="memItemLeft" align="right" valign="top"><a id="a225f0f413ca5074e534a643a9b4c2977"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>controlPeriod</b></td></tr>
+<tr class="separator:a225f0f413ca5074e534a643a9b4c2977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31bb487e004384b1c84e1606a18babf5"><td class="memItemLeft" align="right" valign="top"><a id="a31bb487e004384b1c84e1606a18babf5"></a>
+<a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a>&#160;</td><td class="memItemRight" valign="bottom"><b>listener</b></td></tr>
+<tr class="separator:a31bb487e004384b1c84e1606a18babf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502ddf6c4a79f97e86483a1317a7489b"><td class="memItemLeft" align="right" valign="top"><a id="a502ddf6c4a79f97e86483a1317a7489b"></a>
+Tut.MppOpcUaClientLib.MppClient&#160;</td><td class="memItemRight" valign="bottom"><b>client</b></td></tr>
+<tr class="separator:a502ddf6c4a79f97e86483a1317a7489b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for controlling a flow control valve </p>
+<p>Creates an object instance of a flow control valve that can be used to control the valve. Includes a PI controller to regulate pressure. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a30ba36af47913e18552ee88461ad70b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30ba36af47913e18552ee88461ad70b7">&#9670;&nbsp;</a></span>FlowControlValve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ASE6030.FlowControlValve.FlowControlValve </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref Tut.MppOpcUaClientLib.MppClient&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a>&#160;</td>
+          <td class="paramname"><em>listener</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name (code) of the corresponding device. Example: V104</td></tr>
+    <tr><td class="paramname">client</td><td>Reference to MppClient object</td></tr>
+    <tr><td class="paramname">listener</td><td>Reference to <a class="el" href="class_a_s_e6030_1_1_listener.html" title="Class listening for changes in the system ">Listener</a> object</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a89cfb29a75e92e322943b6d7ca780436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cfb29a75e92e322943b6d7ca780436">&#9670;&nbsp;</a></span>control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ASE6030.FlowControlValve.control </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the new control value from feedback measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>New control value for valve.</dd></dl>
+
+</div>
+</div>
+<a id="a0a92ca1afb6da92e55a652e07361fd56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a92ca1afb6da92e55a652e07361fd56">&#9670;&nbsp;</a></span>startPI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.FlowControlValve.startPI </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>integrationTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>controlPeriod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>executionTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts the PI controller for valve. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pValue</td><td>Gain</td></tr>
+    <tr><td class="paramname">targetValue</td><td>Target value</td></tr>
+    <tr><td class="paramname">integrationTime</td><td>Integration time</td></tr>
+    <tr><td class="paramname">controlPeriod</td><td>Control period (interval)</td></tr>
+    <tr><td class="paramname">executionTime</td><td>Execution time, how long the controller is on.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>ASE6030/FlowControlValve.cs</li>
 </ul>

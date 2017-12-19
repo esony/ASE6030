@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['connectclient',['connectClient',['../class_a_s_e6030_1_1_controller.html#a5f84e69b4885c561df4bc177fcc54d40',1,'ASE6030::Controller']]],
-  ['controller',['Controller',['../class_a_s_e6030_1_1_controller.html#aa7df468c34d983c6efe88f12abeffb79',1,'ASE6030::Controller']]]
+  ['abortsequence',['abortSequence',['../class_a_s_e6030_1_1_controller.html#a1fa113ab02226c2d8a678365a749e3b0',1,'ASE6030::Controller']]],
+  ['assignunits',['assignUnits',['../class_a_s_e6030_1_1_controller.html#a1a0e5a9d392358ae55514c201631591c',1,'ASE6030::Controller']]]
 ];

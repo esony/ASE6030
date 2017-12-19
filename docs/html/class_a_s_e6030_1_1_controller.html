@@ -66,13 +66,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_a_s_e6030_1_1_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ASE6030.Controller Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the controller logic  
+<p>The controller logic  
  <a href="class_a_s_e6030_1_1_controller.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -83,18 +85,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f84e69b4885c561df4bc177fcc54d40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a5f84e69b4885c561df4bc177fcc54d40">connectClient</a> (string URL)</td></tr>
 <tr class="memdesc:a5f84e69b4885c561df4bc177fcc54d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to selected client.  <a href="#a5f84e69b4885c561df4bc177fcc54d40">More...</a><br /></td></tr>
 <tr class="separator:a5f84e69b4885c561df4bc177fcc54d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee09ba01da47aa772ce3da642e08e47"><td class="memItemLeft" align="right" valign="top"><a id="afee09ba01da47aa772ce3da642e08e47"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setParams</b> (<a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html">SequenceParameters</a> parameters)</td></tr>
+<tr class="memitem:add4e6755696e2d0525bbb9fb8a5c8155"><td class="memItemLeft" align="right" valign="top"><a id="add4e6755696e2d0525bbb9fb8a5c8155"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#add4e6755696e2d0525bbb9fb8a5c8155">getURL</a> ()</td></tr>
+<tr class="memdesc:add4e6755696e2d0525bbb9fb8a5c8155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current URL for device to be connected. Mainly for testing purposes. <br /></td></tr>
+<tr class="separator:add4e6755696e2d0525bbb9fb8a5c8155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee09ba01da47aa772ce3da642e08e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#afee09ba01da47aa772ce3da642e08e47">setParams</a> (<a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html">SequenceParameters</a> parameters)</td></tr>
 <tr class="separator:afee09ba01da47aa772ce3da642e08e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afca76c3628ed37f21c1aac044a5e0441"><td class="memItemLeft" align="right" valign="top"><a id="afca76c3628ed37f21c1aac044a5e0441"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startSequence</b> ()</td></tr>
+<tr class="memitem:afca76c3628ed37f21c1aac044a5e0441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#afca76c3628ed37f21c1aac044a5e0441">startSequence</a> ()</td></tr>
+<tr class="memdesc:afca76c3628ed37f21c1aac044a5e0441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the sequence.  <a href="#afca76c3628ed37f21c1aac044a5e0441">More...</a><br /></td></tr>
 <tr class="separator:afca76c3628ed37f21c1aac044a5e0441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaad2a679e6a2f5db4193f58fd7482def"><td class="memItemLeft" align="right" valign="top"><a id="aaad2a679e6a2f5db4193f58fd7482def"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startImpregnation</b> ()</td></tr>
-<tr class="separator:aaad2a679e6a2f5db4193f58fd7482def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab508adee38f1120e4213efd9104480cf"><td class="memItemLeft" align="right" valign="top"><a id="ab508adee38f1120e4213efd9104480cf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>abortImpregnation</b> ()</td></tr>
-<tr class="separator:ab508adee38f1120e4213efd9104480cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa113ab02226c2d8a678365a749e3b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a1fa113ab02226c2d8a678365a749e3b0">abortSequence</a> ()</td></tr>
+<tr class="memdesc:a1fa113ab02226c2d8a678365a749e3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort sequence.  <a href="#a1fa113ab02226c2d8a678365a749e3b0">More...</a><br /></td></tr>
+<tr class="separator:a1fa113ab02226c2d8a678365a749e3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -104,9 +106,204 @@ Tut.MppOpcUaClientLib.MppClient&#160;</td><td class="memItemRight" valign="botto
 <tr class="memitem:a8cc31711b16a81099afb9ad6125d1d0f"><td class="memItemLeft" align="right" valign="top"><a id="a8cc31711b16a81099afb9ad6125d1d0f"></a>
 <a class="el" href="class_a_s_e6030_1_1_listener.html">Listener</a>&#160;</td><td class="memItemRight" valign="bottom"><b>listener</b></td></tr>
 <tr class="separator:a8cc31711b16a81099afb9ad6125d1d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac13cb64488eb479527e08d4af8f29869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#ac13cb64488eb479527e08d4af8f29869">startListener</a> ()</td></tr>
+<tr class="separator:ac13cb64488eb479527e08d4af8f29869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0e5a9d392358ae55514c201631591c"><td class="memItemLeft" align="right" valign="top"><a id="a1a0e5a9d392358ae55514c201631591c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a1a0e5a9d392358ae55514c201631591c">assignUnits</a> ()</td></tr>
+<tr class="memdesc:a1a0e5a9d392358ae55514c201631591c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create objects for all units to be controlled. <br /></td></tr>
+<tr class="separator:a1a0e5a9d392358ae55514c201631591c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad2a679e6a2f5db4193f58fd7482def"><td class="memItemLeft" align="right" valign="top"><a id="aaad2a679e6a2f5db4193f58fd7482def"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#aaad2a679e6a2f5db4193f58fd7482def">startImpregnation</a> ()</td></tr>
+<tr class="memdesc:aaad2a679e6a2f5db4193f58fd7482def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Impregnation step in its own thread, followed by Black Liquor Fill. <br /></td></tr>
+<tr class="separator:aaad2a679e6a2f5db4193f58fd7482def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60700638fa6ac183134d3e9b6aa1005"><td class="memItemLeft" align="right" valign="top"><a id="ac60700638fa6ac183134d3e9b6aa1005"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#ac60700638fa6ac183134d3e9b6aa1005">startBlackLiquorFill</a> ()</td></tr>
+<tr class="memdesc:ac60700638fa6ac183134d3e9b6aa1005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Black Liquor Fill step in its own thread, followed by White Liquor Fill. <br /></td></tr>
+<tr class="separator:ac60700638fa6ac183134d3e9b6aa1005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3027f9fd319e634cc11b9b9cc680c4"><td class="memItemLeft" align="right" valign="top"><a id="a4e3027f9fd319e634cc11b9b9cc680c4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a4e3027f9fd319e634cc11b9b9cc680c4">startWhiteLiquorFill</a> ()</td></tr>
+<tr class="memdesc:a4e3027f9fd319e634cc11b9b9cc680c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start White Liquor Fill step in its own thread, followed by Cooking. <br /></td></tr>
+<tr class="separator:a4e3027f9fd319e634cc11b9b9cc680c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc176e3b374f78d4d1ba4dd7d6542b6"><td class="memItemLeft" align="right" valign="top"><a id="a0bc176e3b374f78d4d1ba4dd7d6542b6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a0bc176e3b374f78d4d1ba4dd7d6542b6">startCooking</a> ()</td></tr>
+<tr class="memdesc:a0bc176e3b374f78d4d1ba4dd7d6542b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Cooking step in its own thread, followed by Discharge. <br /></td></tr>
+<tr class="separator:a0bc176e3b374f78d4d1ba4dd7d6542b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa881bbc599467936dbffc03ba2038906"><td class="memItemLeft" align="right" valign="top"><a id="aa881bbc599467936dbffc03ba2038906"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#aa881bbc599467936dbffc03ba2038906">discharge</a> ()</td></tr>
+<tr class="memdesc:aa881bbc599467936dbffc03ba2038906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Discharge step in its own thread. <br /></td></tr>
+<tr class="separator:aa881bbc599467936dbffc03ba2038906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce11137966555bf33690347e1e56cf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a9ce11137966555bf33690347e1e56cf7">shutDown</a> ()</td></tr>
+<tr class="memdesc:a9ce11137966555bf33690347e1e56cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down all pumps, heater, close all valves.  <a href="#a9ce11137966555bf33690347e1e56cf7">More...</a><br /></td></tr>
+<tr class="separator:a9ce11137966555bf33690347e1e56cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2307744a7146425be174ec8acbe80e68"><td class="memItemLeft" align="right" valign="top"><a id="a2307744a7146425be174ec8acbe80e68"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a2307744a7146425be174ec8acbe80e68">EM1_OP1</a> ()</td></tr>
+<tr class="memdesc:a2307744a7146425be174ec8acbe80e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open route to digester/T300, pump and heat. <br /></td></tr>
+<tr class="separator:a2307744a7146425be174ec8acbe80e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136dfb3ec3897fbec64840958f841b46"><td class="memItemLeft" align="right" valign="top"><a id="a136dfb3ec3897fbec64840958f841b46"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a136dfb3ec3897fbec64840958f841b46">EM1_OP2</a> ()</td></tr>
+<tr class="memdesc:a136dfb3ec3897fbec64840958f841b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open route to digester/T300 and pump. <br /></td></tr>
+<tr class="separator:a136dfb3ec3897fbec64840958f841b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada67e644ad325022d583ccb45c8bc979"><td class="memItemLeft" align="right" valign="top"><a id="ada67e644ad325022d583ccb45c8bc979"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#ada67e644ad325022d583ccb45c8bc979">EM1_OP3</a> ()</td></tr>
+<tr class="memdesc:ada67e644ad325022d583ccb45c8bc979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close route to digester/T300, pump and heater off. <br /></td></tr>
+<tr class="separator:ada67e644ad325022d583ccb45c8bc979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a77c72e15f8e4341864266e1c883dc8"><td class="memItemLeft" align="right" valign="top"><a id="a1a77c72e15f8e4341864266e1c883dc8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a1a77c72e15f8e4341864266e1c883dc8">EM1_OP4</a> ()</td></tr>
+<tr class="memdesc:a1a77c72e15f8e4341864266e1c883dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close route to digester/T300 and pump off. <br /></td></tr>
+<tr class="separator:a1a77c72e15f8e4341864266e1c883dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee9ee83a0799f1c45edd53914b22f27"><td class="memItemLeft" align="right" valign="top"><a id="a3ee9ee83a0799f1c45edd53914b22f27"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a3ee9ee83a0799f1c45edd53914b22f27">EM2_OP1</a> ()</td></tr>
+<tr class="memdesc:a3ee9ee83a0799f1c45edd53914b22f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up the rest in tech details docs. <br /></td></tr>
+<tr class="separator:a3ee9ee83a0799f1c45edd53914b22f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8e1bba080881b98fdd0d928316cfe9"><td class="memItemLeft" align="right" valign="top"><a id="a9f8e1bba080881b98fdd0d928316cfe9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM2_OP2</b> ()</td></tr>
+<tr class="separator:a9f8e1bba080881b98fdd0d928316cfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6f13495bcc83ae3bf46de1b1310a9b"><td class="memItemLeft" align="right" valign="top"><a id="a1f6f13495bcc83ae3bf46de1b1310a9b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP1</b> ()</td></tr>
+<tr class="separator:a1f6f13495bcc83ae3bf46de1b1310a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64848ea464607f95e91b1da92adc1aeb"><td class="memItemLeft" align="right" valign="top"><a id="a64848ea464607f95e91b1da92adc1aeb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP2</b> ()</td></tr>
+<tr class="separator:a64848ea464607f95e91b1da92adc1aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b515c30c2599a8bf3e796bba73b9ce"><td class="memItemLeft" align="right" valign="top"><a id="a92b515c30c2599a8bf3e796bba73b9ce"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP3</b> ()</td></tr>
+<tr class="separator:a92b515c30c2599a8bf3e796bba73b9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a58465612fe09ca1edd010f462f156c"><td class="memItemLeft" align="right" valign="top"><a id="a1a58465612fe09ca1edd010f462f156c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP4</b> ()</td></tr>
+<tr class="separator:a1a58465612fe09ca1edd010f462f156c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36821d2fcf2823a14d968d76c7746f56"><td class="memItemLeft" align="right" valign="top"><a id="a36821d2fcf2823a14d968d76c7746f56"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP5</b> ()</td></tr>
+<tr class="separator:a36821d2fcf2823a14d968d76c7746f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2375462bbd5c285383a163bcdc863cb1"><td class="memItemLeft" align="right" valign="top"><a id="a2375462bbd5c285383a163bcdc863cb1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP6</b> ()</td></tr>
+<tr class="separator:a2375462bbd5c285383a163bcdc863cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876559042576cdad5b618af7c0027e3f"><td class="memItemLeft" align="right" valign="top"><a id="a876559042576cdad5b618af7c0027e3f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM3_OP7</b> ()</td></tr>
+<tr class="separator:a876559042576cdad5b618af7c0027e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7140dbb56a32c9eb13c4b194042901"><td class="memItemLeft" align="right" valign="top"><a id="a3e7140dbb56a32c9eb13c4b194042901"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a3e7140dbb56a32c9eb13c4b194042901">EM3_OP8</a> (int delay)</td></tr>
+<tr class="memdesc:a3e7140dbb56a32c9eb13c4b194042901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open V204, wait for time delay, close V204. Int delay in ms. <br /></td></tr>
+<tr class="separator:a3e7140dbb56a32c9eb13c4b194042901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d62a17fc0600c10bfd805275efe8615"><td class="memItemLeft" align="right" valign="top"><a id="a6d62a17fc0600c10bfd805275efe8615"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM4_OP1</b> ()</td></tr>
+<tr class="separator:a6d62a17fc0600c10bfd805275efe8615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e83967562237044f564c5dab7020f0a"><td class="memItemLeft" align="right" valign="top"><a id="a7e83967562237044f564c5dab7020f0a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM4_OP2</b> ()</td></tr>
+<tr class="separator:a7e83967562237044f564c5dab7020f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac309fed5ac5a1e1b14c91f0bc74384a"><td class="memItemLeft" align="right" valign="top"><a id="aac309fed5ac5a1e1b14c91f0bc74384a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM5_OP1</b> ()</td></tr>
+<tr class="separator:aac309fed5ac5a1e1b14c91f0bc74384a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e21b41f4b6fd90dec2d942f3370183"><td class="memItemLeft" align="right" valign="top"><a id="ac1e21b41f4b6fd90dec2d942f3370183"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM5_OP2</b> ()</td></tr>
+<tr class="separator:ac1e21b41f4b6fd90dec2d942f3370183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db5e3e582ab32c0e112f5d23c0e0e52"><td class="memItemLeft" align="right" valign="top"><a id="a3db5e3e582ab32c0e112f5d23c0e0e52"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM5_OP3</b> ()</td></tr>
+<tr class="separator:a3db5e3e582ab32c0e112f5d23c0e0e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24a7fd26d6686a1d7e2d1637df01b3d"><td class="memItemLeft" align="right" valign="top"><a id="ae24a7fd26d6686a1d7e2d1637df01b3d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EM5_OP4</b> ()</td></tr>
+<tr class="separator:ae24a7fd26d6686a1d7e2d1637df01b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04581a4009f6c2f43e6d00a9ffe0f31b"><td class="memItemLeft" align="right" valign="top"><a id="a04581a4009f6c2f43e6d00a9ffe0f31b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>U1_OP1</b> ()</td></tr>
+<tr class="separator:a04581a4009f6c2f43e6d00a9ffe0f31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c7d72a188abbee855fadfa2b20b9c1"><td class="memItemLeft" align="right" valign="top"><a id="a88c7d72a188abbee855fadfa2b20b9c1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>U1_OP2</b> ()</td></tr>
+<tr class="separator:a88c7d72a188abbee855fadfa2b20b9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade672c393adf276892b83f1975868052"><td class="memItemLeft" align="right" valign="top"><a id="ade672c393adf276892b83f1975868052"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>U1_OP3</b> ()</td></tr>
+<tr class="separator:ade672c393adf276892b83f1975868052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39c8081f96086a56d87761aaa7ca4a1"><td class="memItemLeft" align="right" valign="top"><a id="ad39c8081f96086a56d87761aaa7ca4a1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>U1_OP4</b> ()</td></tr>
+<tr class="separator:ad39c8081f96086a56d87761aaa7ca4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b138dfba719951a59f240ff60c80979"><td class="memItemLeft" align="right" valign="top"><a id="a2b138dfba719951a59f240ff60c80979"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Err</b> (string e)</td></tr>
+<tr class="separator:a2b138dfba719951a59f240ff60c80979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a10e880717ab8856d38db3bf3cde053c9"><td class="memItemLeft" align="right" valign="top"><a id="a10e880717ab8856d38db3bf3cde053c9"></a>
+<a class="el" href="class_a_s_e6030_1_1_main_window.html">MainWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><b>window</b></td></tr>
+<tr class="separator:a10e880717ab8856d38db3bf3cde053c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e009a3dfc8bdf97720f80c4b964ac14"><td class="memItemLeft" align="right" valign="top"><a id="a2e009a3dfc8bdf97720f80c4b964ac14"></a>
+Tut.MppOpcUaClientLib.MppClient.MppClientCtorParams&#160;</td><td class="memItemRight" valign="bottom"><b>simulatorParams</b></td></tr>
+<tr class="separator:a2e009a3dfc8bdf97720f80c4b964ac14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fca165bf2388426d598f23ac8d9acd6"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a6fca165bf2388426d598f23ac8d9acd6">SIMULATOR_URL</a> = &quot;opc.tcp://127.0.0.1:8087&quot;</td></tr>
+<tr class="separator:a6fca165bf2388426d598f23ac8d9acd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2011ff29fbc80180267d0aba04e903aa"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_s_e6030_1_1_controller.html#a2011ff29fbc80180267d0aba04e903aa">DEVICE_URL</a> = &quot;opc.tcp://192.168.137.101&quot;</td></tr>
+<tr class="separator:a2011ff29fbc80180267d0aba04e903aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89786f98405cbb27933eb00182d03c9a"><td class="memItemLeft" align="right" valign="top"><a id="a89786f98405cbb27933eb00182d03c9a"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>URL</b></td></tr>
+<tr class="separator:a89786f98405cbb27933eb00182d03c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64624861c96c4570085f096079a2e317"><td class="memItemLeft" align="right" valign="top"><a id="a64624861c96c4570085f096079a2e317"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>LOOP_TIME</b> = 200</td></tr>
+<tr class="separator:a64624861c96c4570085f096079a2e317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab5f075cbe2e1882c444557c57f7602"><td class="memItemLeft" align="right" valign="top"><a id="a5ab5f075cbe2e1882c444557c57f7602"></a>
+<a class="el" href="class_a_s_e6030_1_1_pump.html">Pump</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p100</b></td></tr>
+<tr class="separator:a5ab5f075cbe2e1882c444557c57f7602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e39f7d76e8e53e0927fbdf667860450"><td class="memItemLeft" align="right" valign="top"><a id="a1e39f7d76e8e53e0927fbdf667860450"></a>
+<a class="el" href="class_a_s_e6030_1_1_pump.html">Pump</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p200</b></td></tr>
+<tr class="separator:a1e39f7d76e8e53e0927fbdf667860450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa206db707757508ca7d76fd0f3ef339"><td class="memItemLeft" align="right" valign="top"><a id="aaa206db707757508ca7d76fd0f3ef339"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v103</b></td></tr>
+<tr class="separator:aaa206db707757508ca7d76fd0f3ef339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12546e753b7aaf735aae184e384523d8"><td class="memItemLeft" align="right" valign="top"><a id="a12546e753b7aaf735aae184e384523d8"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v201</b></td></tr>
+<tr class="separator:a12546e753b7aaf735aae184e384523d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d55b3ae012a7f16456fc0a39a64fe35"><td class="memItemLeft" align="right" valign="top"><a id="a4d55b3ae012a7f16456fc0a39a64fe35"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v204</b></td></tr>
+<tr class="separator:a4d55b3ae012a7f16456fc0a39a64fe35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a658e4e5c136ccfbb10551b07cb9092e8"><td class="memItemLeft" align="right" valign="top"><a id="a658e4e5c136ccfbb10551b07cb9092e8"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v301</b></td></tr>
+<tr class="separator:a658e4e5c136ccfbb10551b07cb9092e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d87a2afa1aea2bff23bd01881b4e8f3"><td class="memItemLeft" align="right" valign="top"><a id="a5d87a2afa1aea2bff23bd01881b4e8f3"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v302</b></td></tr>
+<tr class="separator:a5d87a2afa1aea2bff23bd01881b4e8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b8b0b43264264d893a8e1dd731359b"><td class="memItemLeft" align="right" valign="top"><a id="ae6b8b0b43264264d893a8e1dd731359b"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v303</b></td></tr>
+<tr class="separator:ae6b8b0b43264264d893a8e1dd731359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151cf48626d9fb077bdde06c754fe8f5"><td class="memItemLeft" align="right" valign="top"><a id="a151cf48626d9fb077bdde06c754fe8f5"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v304</b></td></tr>
+<tr class="separator:a151cf48626d9fb077bdde06c754fe8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c95dda39597388cd343165ba3b7074e"><td class="memItemLeft" align="right" valign="top"><a id="a3c95dda39597388cd343165ba3b7074e"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v401</b></td></tr>
+<tr class="separator:a3c95dda39597388cd343165ba3b7074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1808e69cc26aee7ed1f80c7aeddeb88c"><td class="memItemLeft" align="right" valign="top"><a id="a1808e69cc26aee7ed1f80c7aeddeb88c"></a>
+<a class="el" href="class_a_s_e6030_1_1_on_off_valve.html">OnOffValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v404</b></td></tr>
+<tr class="separator:a1808e69cc26aee7ed1f80c7aeddeb88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ae40c880ccc21c4ccd0d621144362d"><td class="memItemLeft" align="right" valign="top"><a id="ae2ae40c880ccc21c4ccd0d621144362d"></a>
+<a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html">FlowControlValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v102</b></td></tr>
+<tr class="separator:ae2ae40c880ccc21c4ccd0d621144362d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436ad6644fb7bb1e5d27b7373d6b9304"><td class="memItemLeft" align="right" valign="top"><a id="a436ad6644fb7bb1e5d27b7373d6b9304"></a>
+<a class="el" href="class_a_s_e6030_1_1_flow_control_valve.html">FlowControlValve</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v104</b></td></tr>
+<tr class="separator:a436ad6644fb7bb1e5d27b7373d6b9304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83b0066e7b02129efe2f9d2f9b27631"><td class="memItemLeft" align="right" valign="top"><a id="ad83b0066e7b02129efe2f9d2f9b27631"></a>
+<a class="el" href="class_a_s_e6030_1_1_heater.html">Heater</a>&#160;</td><td class="memItemRight" valign="bottom"><b>e100</b></td></tr>
+<tr class="separator:ad83b0066e7b02129efe2f9d2f9b27631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37c0d55369f717ea4b162f2362475df"><td class="memItemLeft" align="right" valign="top"><a id="ab37c0d55369f717ea4b162f2362475df"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>ListenerThread</b></td></tr>
+<tr class="separator:ab37c0d55369f717ea4b162f2362475df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40180cabc4c4b7614623b448653cacb1"><td class="memItemLeft" align="right" valign="top"><a id="a40180cabc4c4b7614623b448653cacb1"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>ImpregnationThread</b></td></tr>
+<tr class="separator:a40180cabc4c4b7614623b448653cacb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a50aa5188fafd9109639053e41b1294"><td class="memItemLeft" align="right" valign="top"><a id="a8a50aa5188fafd9109639053e41b1294"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>BlackLiquorThread</b></td></tr>
+<tr class="separator:a8a50aa5188fafd9109639053e41b1294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00c480ed840ab161db7b357a4b2f411"><td class="memItemLeft" align="right" valign="top"><a id="ac00c480ed840ab161db7b357a4b2f411"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>WhiteLiquorThread</b></td></tr>
+<tr class="separator:ac00c480ed840ab161db7b357a4b2f411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bcee80fe2923783d2e5713ad8141ed3"><td class="memItemLeft" align="right" valign="top"><a id="a8bcee80fe2923783d2e5713ad8141ed3"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>CookingThread</b></td></tr>
+<tr class="separator:a8bcee80fe2923783d2e5713ad8141ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa239bb200cd8c58c5e0d014d6ca144b9"><td class="memItemLeft" align="right" valign="top"><a id="aa239bb200cd8c58c5e0d014d6ca144b9"></a>
+Thread&#160;</td><td class="memItemRight" valign="bottom"><b>DischargeThread</b></td></tr>
+<tr class="separator:aa239bb200cd8c58c5e0d014d6ca144b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580fc43de5878745efbb498cec865f1a"><td class="memItemLeft" align="right" valign="top"><a id="a580fc43de5878745efbb498cec865f1a"></a>
+<a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html">SequenceParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parameters</b></td></tr>
+<tr class="separator:a580fc43de5878745efbb498cec865f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is the controller logic </p>
+<div class="textblock"><p>The controller logic </p>
 <p>Uses Tut.MppOpcUaClientLib library to connect to the process </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7df468c34d983c6efe88f12abeffb79"></a>
@@ -134,11 +331,39 @@ Tut.MppOpcUaClientLib.MppClient&#160;</td><td class="memItemRight" valign="botto
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>Takes the main window as a parameter. Used to send update calls for GUI </p>
+<p>Takes the main window as a parameter. Window is used to send update calls for GUI </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1fa113ab02226c2d8a678365a749e3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa113ab02226c2d8a678365a749e3b0">&#9670;&nbsp;</a></span>abortSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Controller.abortSequence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abort sequence. </p>
+<p>Abort the sequence, kill all working threads, shut all valves, pumps, and heater, notify the mainwindow. Will not affect the listener thread. </p>
+
+</div>
+</div>
 <a id="a5f84e69b4885c561df4bc177fcc54d40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f84e69b4885c561df4bc177fcc54d40">&#9670;&nbsp;</a></span>connectClient()</h2>
 
@@ -164,7 +389,174 @@ Tut.MppOpcUaClientLib.MppClient&#160;</td><td class="memItemRight" valign="botto
 </div><div class="memdoc">
 
 <p>Connect to selected client. </p>
-<p>Parameter "URL" must be either "DEVICE" or "SIMULATOR". No other inputs supported for now. Simulator and device URLs hard-coded into controller. Support for other URLs can be added later. </p>
+<p>Parameter "URL" must be either "DEVICE" or "SIMULATOR". No other inputs supported for now. Simulator and device URLs hard-coded into controller. Support for other URLs can be added later. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">URL</td><td>"SIMULATOR" or "DEVICE"</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afee09ba01da47aa772ce3da642e08e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee09ba01da47aa772ce3da642e08e47">&#9670;&nbsp;</a></span>setParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Controller.setParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html">SequenceParameters</a>&#160;</td>
+          <td class="paramname"><em>parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set sequence parameters. Throws error if parameter in wrong range. Note: Errorhandling could also be implemented in <a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html" title="Class for saving the sequence parameters. ">SequenceParameters</a> class. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameters</td><td>Look: <a class="el" href="class_a_s_e6030_1_1_sequence_parameters.html" title="Class for saving the sequence parameters. ">SequenceParameters</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9ce11137966555bf33690347e1e56cf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce11137966555bf33690347e1e56cf7">&#9670;&nbsp;</a></span>shutDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Controller.shutDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shut down all pumps, heater, close all valves. </p>
+<p>Shut down pumps</p>
+<p>Close valves </p>
+
+</div>
+</div>
+<a id="ac13cb64488eb479527e08d4af8f29869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13cb64488eb479527e08d4af8f29869">&#9670;&nbsp;</a></span>startListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Controller.startListener </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Start a new thread for listener and connect listener to system </p>
+
+</div>
+</div>
+<a id="afca76c3628ed37f21c1aac044a5e0441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca76c3628ed37f21c1aac044a5e0441">&#9670;&nbsp;</a></span>startSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ASE6030.Controller.startSequence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start the sequence. </p>
+<p>Order: Impregnation, Black Liquor Fill, White Liquor Fill, Cooking, Discharge </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2011ff29fbc80180267d0aba04e903aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2011ff29fbc80180267d0aba04e903aa">&#9670;&nbsp;</a></span>DEVICE_URL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string ASE6030.Controller.DEVICE_URL = &quot;opc.tcp://192.168.137.101&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Device URL </p>
+
+</div>
+</div>
+<a id="a6fca165bf2388426d598f23ac8d9acd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fca165bf2388426d598f23ac8d9acd6">&#9670;&nbsp;</a></span>SIMULATOR_URL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string ASE6030.Controller.SIMULATOR_URL = &quot;opc.tcp://127.0.0.1:8087&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Simulator URL </p>
 
 </div>
 </div>

@@ -1,23 +1,223 @@
 \hypertarget{class_a_s_e6030_1_1_listener}{}\section{A\+S\+E6030.\+Listener Class Reference}
 \label{class_a_s_e6030_1_1_listener}\index{A\+S\+E6030.\+Listener@{A\+S\+E6030.\+Listener}}
+
+
+Class listening for changes in the system  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_af7626538cc99c4945ea517dbf6eaa249}\label{class_a_s_e6030_1_1_listener_af7626538cc99c4945ea517dbf6eaa249}} 
-{\bfseries Listener} (\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window} window)
+\hyperlink{class_a_s_e6030_1_1_listener_af7626538cc99c4945ea517dbf6eaa249}{Listener} (\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window} window)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+int \hyperlink{class_a_s_e6030_1_1_listener_a7f82d12db6e97dd86f78dc2f62b23214}{get\+Int} (string key)
+\begin{DoxyCompactList}\small\item\em Get the most recent value for a device that has a value type integer \end{DoxyCompactList}\item 
+double \hyperlink{class_a_s_e6030_1_1_listener_af8474a0fcd293043899a51cbb3e05d44}{get\+Double} (string key)
+\begin{DoxyCompactList}\small\item\em Get the most recent value for a device that has a value type double \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_s_e6030_1_1_listener_ac6b8dbf1ed6fd6c3ce0911beef9759ce}{get\+Bool} (string key)
+\begin{DoxyCompactList}\small\item\em Get the most recent value for a device that has a value type bool \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_listener_a8da1c65da8448e79897a2c06c31e6ca0}{connect} (string url)
+\begin{DoxyCompactList}\small\item\em Connect to the system and subscribe to listen for changes in values. Base code from course material \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a7f82d12db6e97dd86f78dc2f62b23214}\label{class_a_s_e6030_1_1_listener_a7f82d12db6e97dd86f78dc2f62b23214}} 
-int {\bfseries get\+Int} (string key)
+void \hyperlink{class_a_s_e6030_1_1_listener_ab7cab9e2e9a1a2bbec9f2d8be25411b1}{M\+\_\+mpp\+Client\+\_\+\+Connection\+Status} (object source, Ua\+Lib.\+Connection\+Status\+Event\+Args args)
+\begin{DoxyCompactList}\small\item\em Listens for changes in connection. Notifies the user if connection is lost. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_listener_a215911bec08fdd4671b17ad9a13944f2}{m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed} (object source, Ua\+Lib.\+Process\+Item\+Changed\+Event\+Args args)
+\begin{DoxyCompactList}\small\item\em Listens for changes in the system. Saves the current values and notifies the Mainwindow for changes. Throws an exception if system sends wrong data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_af8474a0fcd293043899a51cbb3e05d44}\label{class_a_s_e6030_1_1_listener_af8474a0fcd293043899a51cbb3e05d44}} 
-double {\bfseries get\+Double} (string key)
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_ab65acfa466bc3499bf3520c7130e9260}\label{class_a_s_e6030_1_1_listener_ab65acfa466bc3499bf3520c7130e9260}} 
+Ua\+Lib.\+Mpp\+Client {\bfseries m\+\_\+mpp\+Client} = null
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_ac6b8dbf1ed6fd6c3ce0911beef9759ce}\label{class_a_s_e6030_1_1_listener_ac6b8dbf1ed6fd6c3ce0911beef9759ce}} 
-bool {\bfseries get\+Bool} (string key)
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a50847f3c491f4bc625bb38affa5a5113}\label{class_a_s_e6030_1_1_listener_a50847f3c491f4bc625bb38affa5a5113}} 
+\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window} {\bfseries window}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a8da1c65da8448e79897a2c06c31e6ca0}\label{class_a_s_e6030_1_1_listener_a8da1c65da8448e79897a2c06c31e6ca0}} 
-void {\bfseries connect} (string url)
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a970d9378d34696b4a2e43dca533c1d16}\label{class_a_s_e6030_1_1_listener_a970d9378d34696b4a2e43dca533c1d16}} 
+object {\bfseries lock1} = new object()
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a781198abefa16de65e4d5e4d8b97e08a}\label{class_a_s_e6030_1_1_listener_a781198abefa16de65e4d5e4d8b97e08a}} 
+Sorted\+Dictionary$<$ string, dynamic $>$ {\bfseries storage}
+\item 
+string \mbox{[}$\,$\mbox{]} {\bfseries I\+N\+T\+\_\+\+I\+T\+E\+MS}
+\item 
+string \mbox{[}$\,$\mbox{]} {\bfseries D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS}
+\item 
+string \mbox{[}$\,$\mbox{]} {\bfseries B\+O\+O\+L\+\_\+\+I\+T\+E\+MS}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class listening for changes in the system 
+
+Saves the most recent values and send update calls to mainwindow when values change. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_af7626538cc99c4945ea517dbf6eaa249}\label{class_a_s_e6030_1_1_listener_af7626538cc99c4945ea517dbf6eaa249}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!Listener@{Listener}}
+\index{Listener@{Listener}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{Listener()}{Listener()}}
+{\footnotesize\ttfamily A\+S\+E6030.\+Listener.\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{class_a_s_e6030_1_1_main_window}{Main\+Window}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Mainwindow to send update calls to\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a8da1c65da8448e79897a2c06c31e6ca0}\label{class_a_s_e6030_1_1_listener_a8da1c65da8448e79897a2c06c31e6ca0}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!connect@{connect}}
+\index{connect@{connect}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Listener.\+connect (\begin{DoxyParamCaption}\item[{string}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connect to the system and subscribe to listen for changes in values. Base code from course material 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & U\+RL for the system to be connected to\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_ac6b8dbf1ed6fd6c3ce0911beef9759ce}\label{class_a_s_e6030_1_1_listener_ac6b8dbf1ed6fd6c3ce0911beef9759ce}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!get\+Bool@{get\+Bool}}
+\index{get\+Bool@{get\+Bool}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{get\+Bool()}{getBool()}}
+{\footnotesize\ttfamily bool A\+S\+E6030.\+Listener.\+get\+Bool (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the most recent value for a device that has a value type bool 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Name of the device. Example\+: \char`\"{}\+E100\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_af8474a0fcd293043899a51cbb3e05d44}\label{class_a_s_e6030_1_1_listener_af8474a0fcd293043899a51cbb3e05d44}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!get\+Double@{get\+Double}}
+\index{get\+Double@{get\+Double}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{get\+Double()}{getDouble()}}
+{\footnotesize\ttfamily double A\+S\+E6030.\+Listener.\+get\+Double (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the most recent value for a device that has a value type double 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Name of the device. Example\+: \char`\"{}\+T\+I300\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a7f82d12db6e97dd86f78dc2f62b23214}\label{class_a_s_e6030_1_1_listener_a7f82d12db6e97dd86f78dc2f62b23214}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!get\+Int@{get\+Int}}
+\index{get\+Int@{get\+Int}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{get\+Int()}{getInt()}}
+{\footnotesize\ttfamily int A\+S\+E6030.\+Listener.\+get\+Int (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the most recent value for a device that has a value type integer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Name of the device. Example\+: \char`\"{}\+P100\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_ab7cab9e2e9a1a2bbec9f2d8be25411b1}\label{class_a_s_e6030_1_1_listener_ab7cab9e2e9a1a2bbec9f2d8be25411b1}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!M\+\_\+mpp\+Client\+\_\+\+Connection\+Status@{M\+\_\+mpp\+Client\+\_\+\+Connection\+Status}}
+\index{M\+\_\+mpp\+Client\+\_\+\+Connection\+Status@{M\+\_\+mpp\+Client\+\_\+\+Connection\+Status}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{M\+\_\+mpp\+Client\+\_\+\+Connection\+Status()}{M\_mppClient\_ConnectionStatus()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Listener.\+M\+\_\+mpp\+Client\+\_\+\+Connection\+Status (\begin{DoxyParamCaption}\item[{object}]{source,  }\item[{Ua\+Lib.\+Connection\+Status\+Event\+Args}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Listens for changes in connection. Notifies the user if connection is lost. 
+
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a215911bec08fdd4671b17ad9a13944f2}\label{class_a_s_e6030_1_1_listener_a215911bec08fdd4671b17ad9a13944f2}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed@{m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed}}
+\index{m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed@{m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed()}{m\_mppClient\_ProcessItemsChanged()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Listener.\+m\+\_\+mpp\+Client\+\_\+\+Process\+Items\+Changed (\begin{DoxyParamCaption}\item[{object}]{source,  }\item[{Ua\+Lib.\+Process\+Item\+Changed\+Event\+Args}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Listens for changes in the system. Saves the current values and notifies the Mainwindow for changes. Throws an exception if system sends wrong data. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_a99f2d555edabbf3c8ea4d897674d278e}\label{class_a_s_e6030_1_1_listener_a99f2d555edabbf3c8ea4d897674d278e}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!B\+O\+O\+L\+\_\+\+I\+T\+E\+MS@{B\+O\+O\+L\+\_\+\+I\+T\+E\+MS}}
+\index{B\+O\+O\+L\+\_\+\+I\+T\+E\+MS@{B\+O\+O\+L\+\_\+\+I\+T\+E\+MS}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{B\+O\+O\+L\+\_\+\+I\+T\+E\+MS}{BOOL\_ITEMS}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} A\+S\+E6030.\+Listener.\+B\+O\+O\+L\+\_\+\+I\+T\+E\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} \textcolor{keywordtype}{string}[] \{
+                                            \textcolor{stringliteral}{"V103"},
+                                            \textcolor{stringliteral}{"V201"},
+                                            \textcolor{stringliteral}{"V204"},
+                                            \textcolor{stringliteral}{"V301"},
+                                            \textcolor{stringliteral}{"V302"},
+                                            \textcolor{stringliteral}{"V303"},
+                                            \textcolor{stringliteral}{"V304"},
+                                            \textcolor{stringliteral}{"V401"},
+                                            \textcolor{stringliteral}{"V404"},
+                                            \textcolor{stringliteral}{"E100"},
+                                            \textcolor{stringliteral}{"LA+100"},
+                                            \textcolor{stringliteral}{"LS-200"},
+                                            \textcolor{stringliteral}{"LS+300"},
+                                            \textcolor{stringliteral}{"LS-300"}\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_ad63ad730cef9c4fa931b8ec690b9ef21}\label{class_a_s_e6030_1_1_listener_ad63ad730cef9c4fa931b8ec690b9ef21}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS@{D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS}}
+\index{D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS@{D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS}{DOUBLE\_ITEMS}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} A\+S\+E6030.\+Listener.\+D\+O\+U\+B\+L\+E\+\_\+\+I\+T\+E\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} \textcolor{keywordtype}{string}[] \{
+                                            \textcolor{stringliteral}{"TI100"},
+                                            \textcolor{stringliteral}{"TI300"}\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_listener_abb016c37b10ed882195c0ad70e8a9b2f}\label{class_a_s_e6030_1_1_listener_abb016c37b10ed882195c0ad70e8a9b2f}} 
+\index{A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}!I\+N\+T\+\_\+\+I\+T\+E\+MS@{I\+N\+T\+\_\+\+I\+T\+E\+MS}}
+\index{I\+N\+T\+\_\+\+I\+T\+E\+MS@{I\+N\+T\+\_\+\+I\+T\+E\+MS}!A\+S\+E6030\+::\+Listener@{A\+S\+E6030\+::\+Listener}}
+\subsubsection{\texorpdfstring{I\+N\+T\+\_\+\+I\+T\+E\+MS}{INT\_ITEMS}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} A\+S\+E6030.\+Listener.\+I\+N\+T\+\_\+\+I\+T\+E\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} \textcolor{keywordtype}{string}[] \{
+                                            \textcolor{stringliteral}{"V102"},
+                                            \textcolor{stringliteral}{"V104"},
+                                            \textcolor{stringliteral}{"P100"},
+                                            \textcolor{stringliteral}{"P200"},
+                                            \textcolor{stringliteral}{"LI100"},
+                                            \textcolor{stringliteral}{"LI200"},
+                                            \textcolor{stringliteral}{"PI300"},
+                                            \textcolor{stringliteral}{"LI400"}\}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

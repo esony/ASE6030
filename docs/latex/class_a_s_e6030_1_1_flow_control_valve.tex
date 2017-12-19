@@ -1,20 +1,130 @@
 \hypertarget{class_a_s_e6030_1_1_flow_control_valve}{}\section{A\+S\+E6030.\+Flow\+Control\+Valve Class Reference}
 \label{class_a_s_e6030_1_1_flow_control_valve}\index{A\+S\+E6030.\+Flow\+Control\+Valve@{A\+S\+E6030.\+Flow\+Control\+Valve}}
+
+
+Class for controlling a flow control valve  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a30ba36af47913e18552ee88461ad70b7}\label{class_a_s_e6030_1_1_flow_control_valve_a30ba36af47913e18552ee88461ad70b7}} 
-{\bfseries Flow\+Control\+Valve} (String name, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client, ref \hyperlink{class_a_s_e6030_1_1_listener}{Listener} listener)
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}\label{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}} 
-void {\bfseries start\+PI} (double p\+Value, double target\+Value, double integration\+Time, double control\+Period, int execution\+Time)
-\item 
+\hyperlink{class_a_s_e6030_1_1_flow_control_valve_a30ba36af47913e18552ee88461ad70b7}{Flow\+Control\+Valve} (String name, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client, ref \hyperlink{class_a_s_e6030_1_1_listener}{Listener} listener)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}{start\+PI} (double p\+Value, double target\+Value, double integration\+Time, double control\+Period, int execution\+Time)
+\begin{DoxyCompactList}\small\item\em Starts the PI controller for valve. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a40d3c7db594ce3676397ef66c4839991}\label{class_a_s_e6030_1_1_flow_control_valve_a40d3c7db594ce3676397ef66c4839991}} 
+bool \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a40d3c7db594ce3676397ef66c4839991}{is\+Alive} ()
+\begin{DoxyCompactList}\small\item\em Returns true if PI controller thread is alive = PI controller is on, false if not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a97127ac85cda57ed8f6da68b4647700f}\label{class_a_s_e6030_1_1_flow_control_valve_a97127ac85cda57ed8f6da68b4647700f}} 
+void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a97127ac85cda57ed8f6da68b4647700f}{shut\+Down} ()
+\begin{DoxyCompactList}\small\item\em Shuts down PI controller. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a12db565b5451a4a7ee1e13ac7f031d00}\label{class_a_s_e6030_1_1_flow_control_valve_a12db565b5451a4a7ee1e13ac7f031d00}} 
-void {\bfseries open} ()
-\item 
+void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a12db565b5451a4a7ee1e13ac7f031d00}{open} ()
+\begin{DoxyCompactList}\small\item\em Fully open the valve. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}\label{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}} 
-void {\bfseries close} ()
+void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}{close} ()
+\begin{DoxyCompactList}\small\item\em Fully close the valve, shut down PI controller if on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}{control} ()
+\begin{DoxyCompactList}\small\item\em Calculates the new control value from feedback measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a1c1b36660b9d0288a41f173e4e24a371}\label{class_a_s_e6030_1_1_flow_control_valve_a1c1b36660b9d0288a41f173e4e24a371}} 
+String {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_acf013a1a722109453a0306efe5674003}\label{class_a_s_e6030_1_1_flow_control_valve_acf013a1a722109453a0306efe5674003}} 
+Thread {\bfseries pi\+Thread}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_ad9d0062cb8eb2a377e5e885548dc0fb2}\label{class_a_s_e6030_1_1_flow_control_valve_ad9d0062cb8eb2a377e5e885548dc0fb2}} 
+double {\bfseries p\+Value}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a214515a2c9d307c47526c12136288441}\label{class_a_s_e6030_1_1_flow_control_valve_a214515a2c9d307c47526c12136288441}} 
+double {\bfseries i\+Value}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_ac1a2b8b7da02c7b270c1c4c7732c7a58}\label{class_a_s_e6030_1_1_flow_control_valve_ac1a2b8b7da02c7b270c1c4c7732c7a58}} 
+double {\bfseries target\+Value}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_afc49afca675d00afd0654e813e1e2ace}\label{class_a_s_e6030_1_1_flow_control_valve_afc49afca675d00afd0654e813e1e2ace}} 
+double {\bfseries integration\+Time}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a225f0f413ca5074e534a643a9b4c2977}\label{class_a_s_e6030_1_1_flow_control_valve_a225f0f413ca5074e534a643a9b4c2977}} 
+double {\bfseries control\+Period}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a31bb487e004384b1c84e1606a18babf5}\label{class_a_s_e6030_1_1_flow_control_valve_a31bb487e004384b1c84e1606a18babf5}} 
+\hyperlink{class_a_s_e6030_1_1_listener}{Listener} {\bfseries listener}
+\item 
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a502ddf6c4a79f97e86483a1317a7489b}\label{class_a_s_e6030_1_1_flow_control_valve_a502ddf6c4a79f97e86483a1317a7489b}} 
+Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client {\bfseries client}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for controlling a flow control valve 
+
+Creates an object instance of a flow control valve that can be used to control the valve. Includes a PI controller to regulate pressure. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a30ba36af47913e18552ee88461ad70b7}\label{class_a_s_e6030_1_1_flow_control_valve_a30ba36af47913e18552ee88461ad70b7}} 
+\index{A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}!Flow\+Control\+Valve@{Flow\+Control\+Valve}}
+\index{Flow\+Control\+Valve@{Flow\+Control\+Valve}!A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}}
+\subsubsection{\texorpdfstring{Flow\+Control\+Valve()}{FlowControlValve()}}
+{\footnotesize\ttfamily A\+S\+E6030.\+Flow\+Control\+Valve.\+Flow\+Control\+Valve (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client}]{client,  }\item[{ref \hyperlink{class_a_s_e6030_1_1_listener}{Listener}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name (code) of the corresponding device. Example\+: V104\\
+\hline
+{\em client} & Reference to Mpp\+Client object\\
+\hline
+{\em listener} & Reference to \hyperlink{class_a_s_e6030_1_1_listener}{Listener} object\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}\label{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}} 
+\index{A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}!control@{control}}
+\index{control@{control}!A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}}
+\subsubsection{\texorpdfstring{control()}{control()}}
+{\footnotesize\ttfamily int A\+S\+E6030.\+Flow\+Control\+Valve.\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calculates the new control value from feedback measurement. 
+
+\begin{DoxyReturn}{Returns}
+New control value for valve.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}\label{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}} 
+\index{A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}!start\+PI@{start\+PI}}
+\index{start\+PI@{start\+PI}!A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}}
+\subsubsection{\texorpdfstring{start\+P\+I()}{startPI()}}
+{\footnotesize\ttfamily void A\+S\+E6030.\+Flow\+Control\+Valve.\+start\+PI (\begin{DoxyParamCaption}\item[{double}]{p\+Value,  }\item[{double}]{target\+Value,  }\item[{double}]{integration\+Time,  }\item[{double}]{control\+Period,  }\item[{int}]{execution\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the PI controller for valve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Value} & Gain\\
+\hline
+{\em target\+Value} & Target value\\
+\hline
+{\em integration\+Time} & Integration time\\
+\hline
+{\em control\+Period} & Control period (interval)\\
+\hline
+{\em execution\+Time} & Execution time, how long the controller is on.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

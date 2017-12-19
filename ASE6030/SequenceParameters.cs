@@ -5,7 +5,12 @@ using System.Text;
 
 namespace ASE6030
 {
-    class SequenceParameters
+    /// <summary>
+    /// Class for saving the sequence parameters.
+    /// 
+    /// For now used only as a struct, but could also be used to handle the input type and range check.
+    /// </summary>
+    public class SequenceParameters
     {
         // Impregnation
         public int impregnationTime;

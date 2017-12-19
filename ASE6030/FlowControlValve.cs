@@ -6,7 +6,13 @@ using System.Text;
 
 namespace ASE6030
 {
-    class FlowControlValve
+    /// <summary>
+    /// Class for controlling a flow control valve
+    /// 
+    /// Creates an object instance of a flow control valve that can be used to control the valve. 
+    /// Includes a PI controller to regulate pressure.
+    /// </summary>
+    public class FlowControlValve
     {
         private String name;
         private Thread piThread;
@@ -18,7 +24,12 @@ namespace ASE6030
         private Listener listener;
 
         private Tut.MppOpcUaClientLib.MppClient client;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">Name (code) of the corresponding device. Example: V104</param>
+        /// <param name="client">Reference to MppClient object</param>
+        /// <param name="listener">Reference to Listener object</param>
         public FlowControlValve(String name, ref Tut.MppOpcUaClientLib.MppClient client, ref Listener listener) {
             this.name = name;
             this.client = client;
@@ -30,6 +41,14 @@ namespace ASE6030
             this.piThread = new Thread(()=> {});
         }
 
+        /// <summary>
+        /// Starts the PI controller for valve.
+        /// </summary>
+        /// <param name="pValue">Gain</param>
+        /// <param name="targetValue">Target value</param>
+        /// <param name="integrationTime">Integration time</param>
+        /// <param name="controlPeriod">Control period (interval)</param>
+        /// <param name="executionTime">Execution time, how long the controller is on.</param>
         //pValue 0-1, targertValue 0-350, integrationTime ms, controlPeriod ms, executionTime s
         public void startPI(double pValue, double targetValue, double integrationTime, double controlPeriod, int executionTime)
         {
@@ -78,6 +97,10 @@ namespace ASE6030
             }
         }
 
+        /// <summary>
+        /// Calculates the new control value from feedback measurement.
+        /// </summary>
+        /// <returns>New control value for valve.</returns>
         private int control()
         {
             int controlValue = 0;
@@ -111,15 +134,14 @@ namespace ASE6030
             return controlValue;
         }
 
-
+        /// Fully open the valve
         public void open() { 
-            //Do stuff
             client.setValveOpening(name, 100);
         }
 
+        /// Fully close the valve, shut down PI controller if on
         public void close()
         {
-            //Do stuff
             shutDown();
             client.setValveOpening(name, 0);
         }

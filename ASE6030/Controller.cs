@@ -4,27 +4,26 @@ using System.Threading;
 using System.Linq;
 using System.Text;
 
-/// ToDo
-/* Kommentointi
- * Sequence joku
- */
 
+/// <summary>
+/// A school project
+/// </summary>
 namespace ASE6030
 {
     /*! <summary>
-     * This is the controller logic
+     * The controller logic
      * 
      * Uses Tut.MppOpcUaClientLib library to connect to the process
      * </summary>
      */
-    class Controller
+    public class Controller
     {
         private MainWindow window;
         private Tut.MppOpcUaClientLib.MppClient.MppClientCtorParams simulatorParams;
         public Tut.MppOpcUaClientLib.MppClient client;
         public Listener listener;
-        private string SIMULATOR_URL = "opc.tcp://127.0.0.1:8087"; /**< Simulator URL */
-        private string DEVICE_URL = "opc.tcp://192.168.137.101"; /**< Device URL */
+        private const string SIMULATOR_URL = "opc.tcp://127.0.0.1:8087"; /**< Simulator URL */
+        private const string DEVICE_URL = "opc.tcp://192.168.137.101"; /**< Device URL */
         private string URL;
         private int LOOP_TIME = 200;
         
@@ -71,7 +70,7 @@ namespace ASE6030
             DischargeThread = new Thread(() => {});
         }
 
-        /** Start listener thread
+        /** Start a new thread for listener and connect listener to system 
          */
         private void startListener()
         {
@@ -89,6 +88,7 @@ namespace ASE6030
         /// Connect to selected client
         /** Parameter "URL" must be either "DEVICE" or "SIMULATOR". No other inputs supported for now.
          * Simulator and device URLs hard-coded into controller. Support for other URLs can be added later.
+         * <param name="URL">"SIMULATOR" or "DEVICE"</param>
          */
         public void connectClient(string URL)
         {
@@ -114,8 +114,13 @@ namespace ASE6030
                 throw;
             }
         }
+        /// Returns the current URL for device to be connected. Mainly for testing purposes.
+        public string getURL()
+        {
+            return URL;
+        }
 
-        //Assing all the units to client
+        /// Create objects for all units to be controlled
         private void assignUnits()
         {
             // Pumps
@@ -143,10 +148,12 @@ namespace ASE6030
             //Heater
             e100 = new Heater("E100", ref client, ref listener);
         }
-
+        /// Set sequence parameters. Throws error if parameter in wrong range. 
+        /// Note: Errorhandling could also be implemented in SequenceParameters class.
+        /// <param name="parameters">Look: SequenceParameters </param>
         public void setParams(SequenceParameters parameters)
         {
-            if (parameters.impregnationTime <= 0 || parameters.impregnationTime > 60) Err("Impregnation time must be between 0 and 60");
+            if (parameters.impregnationTime < 0 || parameters.impregnationTime > 60) Err("Impregnation time must be between 0 and 60");
             else if (parameters.cookingTime < 0 || parameters.cookingTime > 100) Err("Cooking time must be between 0 and 100");
             else if (parameters.cookingTemperature < 20 || parameters.cookingTemperature > 80) Err("Cooking temperature must be between 20 and 80");
             else if (parameters.cookingPressure < 0 || parameters.cookingPressure > 350) Err("Cooking pressure must be between 0 and 350");
@@ -159,23 +166,18 @@ namespace ASE6030
             }
         }
 
+        /// Start the sequence
+        /** Order: Impregnation, Black Liquor Fill, White Liquor Fill, Cooking, Discharge
+         */
         public void startSequence()
         {
-            /* await Impregnation
-             * await ...rest
-             */
-            /*  new Thread(() =>
-              {
-                  startImpregnation();
-                  ImpregnationThread.Join();
-
-                  startBlackLiquorFill();
-                  BlackLiquorThread.Join();
-                  Console.WriteLine("HHHHHHHHHHHHHHHHHHHOOOOOOOOOOOOOOOOOOOOOOOHHHHHHHHHHHH");
-              }).Start();*/
             startImpregnation();
         }
 
+        /// Abort sequence 
+        /**Abort the sequence, kill all working threads, shut all valves, pumps, and heater, 
+        * notify the mainwindow. Will not affect the listener thread.  
+        */
         public void abortSequence()
         {
             ImpregnationThread.Abort();
@@ -187,8 +189,8 @@ namespace ASE6030
             window.updateProcessFlow(0);
         }
 
-        // Sequence functionalities
-        public void startImpregnation()
+        /// Start Impregnation step in its own thread, followed by Black Liquor Fill
+        private void startImpregnation()
         {
             ImpregnationThread = new Thread(() =>
             {
@@ -196,7 +198,6 @@ namespace ASE6030
                 EM2_OP1();
                 EM5_OP1();
                 EM3_OP2();
-                
 
                 // Wait until LS+300 activates                
                 while(true)
@@ -231,17 +232,16 @@ namespace ASE6030
                 int Td = 1000;
                 EM3_OP8(Td);
 
-                // Here for now
+                // Continue with Black Liquor Fill
                 startBlackLiquorFill();
             });
 
-            // Thread set to background for development
+            // Thread to background
             ImpregnationThread.IsBackground = true;
             ImpregnationThread.Start();
             
         }
-        // Abort whatever is happening
-
+        /// Start Black Liquor Fill step in its own thread, followed by White Liquor Fill
         private void startBlackLiquorFill()
         {
             BlackLiquorThread = new Thread(() =>
@@ -266,6 +266,7 @@ namespace ASE6030
             BlackLiquorThread.Start();
         }
 
+        /// Start White Liquor Fill step in its own thread, followed by Cooking
         private void startWhiteLiquorFill()
         {
             WhiteLiquorThread = new Thread(() =>
@@ -288,6 +289,7 @@ namespace ASE6030
             WhiteLiquorThread.Start();
         }
 
+        /// Start Cooking step in its own thread, followed by Discharge
         private void startCooking()
         {
             CookingThread = new Thread(() =>
@@ -320,27 +322,31 @@ namespace ASE6030
             CookingThread.IsBackground = true;
             CookingThread.Start();
         }
-
+        /// Start Discharge step in its own thread
         private void discharge()
         {
+            DischargeThread = new Thread(() => {
+                window.updateProcessFlow(5);
+                EM5_OP2();
+                EM3_OP5();
 
-            window.updateProcessFlow(5);
-            EM5_OP2();
-            EM3_OP5();
+                // Wait for LS-300 to deactivate
+                while(true)
+                {
+                    if (!listener.getBool("LS-300")) break;
+                    else Thread.Sleep(LOOP_TIME);
+                }
 
-            // Wait for LS-300 to deactivate
-            while(true)
-            {
-                if (!listener.getBool("LS-300")) break;
-                else Thread.Sleep(LOOP_TIME);
-            }
-
-            EM5_OP4();
-            EM3_OP7();
-            Console.WriteLine("Process finished");
-            window.updateProcessFlow(0);
+                EM5_OP4();
+                EM3_OP7();
+                Console.WriteLine("Process finished");
+                window.updateProcessFlow(0);
+            });
+            DischargeThread.IsBackground = true;
+            DischargeThread.Start();
         }
 
+        /// Shut down all pumps, heater, close all valves
         private void shutDown()
         {
             ///Shut down pumps
@@ -366,7 +372,7 @@ namespace ASE6030
             v404.close();
         }
 
-        // Open route to digester/T300, pump and heat
+        /// Open route to digester/T300, pump and heat
         private void EM1_OP1()
         {
             v102.open();
@@ -374,14 +380,14 @@ namespace ASE6030
             if(listener.getInt("LI100") >= 100) p100.turnOn();
             e100.turnOn();
         }
-        // Open route to digester/T300 and pump
+        /// Open route to digester/T300 and pump
         private void EM1_OP2()
         {
             v102.open();
             v304.open();
             if (listener.getInt("LI100") >= 100) p100.turnOn();
         }
-        // Close route to digester/T300, pump and heater off
+        /// Close route to digester/T300, pump and heater off
         private void EM1_OP3()
         {
             v102.close();
@@ -390,14 +396,14 @@ namespace ASE6030
 
             e100.turnOff();
         }
-        // Close route to digester/T300 and pump off
+        /// Close route to digester/T300 and pump off
         private void EM1_OP4()
         {
             v102.close();
             v304.close();
             p100.turnOff();
         }
-        // Look up the rest in tech details docs
+        /// Look up the rest in tech details docs
         private void EM2_OP1() 
         {
             v201.open();
@@ -452,7 +458,7 @@ namespace ASE6030
             v302.close();
             v204.close();
         }
-
+        /// Open V204, wait for time delay, close V204. Int delay in ms.
         private void EM3_OP8(int delay)
         {
             v204.open();

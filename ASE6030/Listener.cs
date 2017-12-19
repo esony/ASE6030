@@ -5,10 +5,14 @@ using System.Linq;
 using System.Text;
 using UaLib = Tut.MppOpcUaClientLib;
 
-//Base code from course material
 namespace ASE6030
 {
-    class Listener// : IDisposable
+    /// <summary>
+    /// Class listening for changes in the system
+    /// 
+    /// Saves the most recent values and send update calls to mainwindow when values change.
+    /// </summary>
+    public class Listener// : IDisposable
     {
         private UaLib.MppClient m_mppClient = null;
         private MainWindow window;
@@ -43,12 +47,22 @@ namespace ASE6030
                                             "LS-200",
                                             "LS+300",
                                             "LS-300"};
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="window">Mainwindow to send update calls to</param>
         public Listener(MainWindow window)
         {
             storage = new SortedDictionary<string, dynamic>();
             this.window = window;
         }
 
+        /// <summary>
+        /// Get the most recent value for a device that has a value type integer
+        /// </summary>
+        /// <param name="key">Name of the device. Example: "P100"</param>
+        /// <returns>Current value</returns>
         public int getInt(string key) {
             // Error handling
             lock (lock1)
@@ -57,6 +71,11 @@ namespace ASE6030
             }
         }
 
+        /// <summary>
+        /// Get the most recent value for a device that has a value type double
+        /// </summary>
+        /// <param name="key">Name of the device. Example: "TI300"</param>
+        /// <returns>Current value</returns>
         public double getDouble(string key) {
             // Error handling
             lock (lock1)
@@ -65,6 +84,11 @@ namespace ASE6030
             }
         }
 
+        /// <summary>
+        /// Get the most recent value for a device that has a value type bool
+        /// </summary>
+        /// <param name="key">Name of the device. Example: "E100"</param>
+        /// <returns>Current value</returns>
         public bool getBool(string key){
             // Error handling
             lock (lock1)
@@ -73,6 +97,10 @@ namespace ASE6030
             }
         }
 
+        /// <summary>
+        /// Connect to the system and subscribe to listen for changes in values. Base code from course material
+        /// </summary>
+        /// <param name="url">URL for the system to be connected to</param>
         public void connect(string url)
         {
             try
@@ -90,17 +118,17 @@ namespace ASE6030
                 foreach (var key in INT_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                //    Console.WriteLine(key + " added");
+                    Console.WriteLine(key + " added");
                 }
                 foreach (var key in BOOL_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                //    Console.WriteLine(key + " added");
+                    Console.WriteLine(key + " added");
                 }
                 foreach (var key in DOUBLE_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                //    Console.WriteLine(key + " added");
+                    Console.WriteLine(key + " added");
                 }
             }
             catch (Exception e)
@@ -110,6 +138,9 @@ namespace ASE6030
             }
         }
 
+        /// <summary>
+        /// Listens for changes in connection. Notifies the user if connection is lost.
+        /// </summary>
         private void M_mppClient_ConnectionStatus(object source, UaLib.ConnectionStatusEventArgs args)
         {
             Console.WriteLine(args.SimplifiedStatus);
@@ -118,7 +149,10 @@ namespace ASE6030
                 System.Windows.MessageBox.Show("CONNECTION LOST" + "\n" + "Reconnecting");
             }
         }
-
+        /// <summary>
+        /// Listens for changes in the system. Saves the current values and notifies the Mainwindow for changes. 
+        /// Throws an exception if system sends wrong data.
+        /// </summary>
         private void m_mppClient_ProcessItemsChanged(object source,
             UaLib.ProcessItemChangedEventArgs args)
         {
