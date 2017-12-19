@@ -124,13 +124,6 @@ namespace ASE6030
             else controlValue = unlimitedControl;
 
             iValue = iValue + pValue * integrationTime / controlPeriod * difference;
-            Console.WriteLine("iValue: " + iValue);
-            Console.WriteLine("pValue: " + pValue);
-
-            Console.WriteLine("difference: " + difference);
-            Console.WriteLine("control:" + controlValue);
-            Console.WriteLine("-------------------");
-
             return controlValue;
         }
 

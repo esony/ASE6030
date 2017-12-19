@@ -505,12 +505,10 @@ namespace ASE6030
         private void U1_OP1()
         {
             // Wórks fine with integrationTime=controlTime
-            //v104.startPI(0.2, 0, 100, 100, 100, 30);
             v104.startPI(parameters.gain, parameters.cookingPressure, parameters.integrationTime*1000, LOOP_TIME, parameters.cookingTime);
         }
         private void U1_OP2()
         {
-            //  e100.regulate(23, "TI300", 30);
             e100.regulate(parameters.cookingTemperature, "TI300", parameters.cookingTime, LOOP_TIME);
         }
         private void U1_OP3()
@@ -525,7 +523,6 @@ namespace ASE6030
         private void Err(string e)
         {
             throw new Exception("Error: " + e);
-
         }
     }
 }

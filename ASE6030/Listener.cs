@@ -118,17 +118,14 @@ namespace ASE6030
                 foreach (var key in INT_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
                 }
                 foreach (var key in BOOL_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
                 }
                 foreach (var key in DOUBLE_ITEMS)
                 {
                     m_mppClient.addToSubscription(key);
-                    Console.WriteLine(key + " added");
                 }
             }
             catch (Exception e)
@@ -169,8 +166,6 @@ namespace ASE6030
                         {
                             storage[key] = actualValue;
                         }
-                        
-                        //Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(BOOL_ITEMS, element => element == key))
                     {
@@ -180,7 +175,6 @@ namespace ASE6030
                         {
                             storage[key] = actualValue;
                         }
-                        //Console.WriteLine(key + ": " + storage[key]);
                     }
                     else if (Array.Exists(DOUBLE_ITEMS, element => element == key))
                     {
@@ -190,7 +184,6 @@ namespace ASE6030
                         {
                             storage[key] = actualValue;
                         }
-                    //    Console.WriteLine(key + ": " + storage[key]);
                     }
                     else
                     {
