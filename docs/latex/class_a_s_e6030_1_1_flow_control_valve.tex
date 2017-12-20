@@ -24,41 +24,6 @@ void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a12db565b5451a4a7ee1e13ac
 \mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}\label{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}} 
 void \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a4b22d19ca0ed6eb60f31705f2ee36dd7}{close} ()
 \begin{DoxyCompactList}\small\item\em Fully close the valve, shut down PI controller if on. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}{control} ()
-\begin{DoxyCompactList}\small\item\em Calculates the new control value from feedback measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a1c1b36660b9d0288a41f173e4e24a371}\label{class_a_s_e6030_1_1_flow_control_valve_a1c1b36660b9d0288a41f173e4e24a371}} 
-String {\bfseries name}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_acf013a1a722109453a0306efe5674003}\label{class_a_s_e6030_1_1_flow_control_valve_acf013a1a722109453a0306efe5674003}} 
-Thread {\bfseries pi\+Thread}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_ad9d0062cb8eb2a377e5e885548dc0fb2}\label{class_a_s_e6030_1_1_flow_control_valve_ad9d0062cb8eb2a377e5e885548dc0fb2}} 
-double {\bfseries p\+Value}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a214515a2c9d307c47526c12136288441}\label{class_a_s_e6030_1_1_flow_control_valve_a214515a2c9d307c47526c12136288441}} 
-double {\bfseries i\+Value}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_ac1a2b8b7da02c7b270c1c4c7732c7a58}\label{class_a_s_e6030_1_1_flow_control_valve_ac1a2b8b7da02c7b270c1c4c7732c7a58}} 
-double {\bfseries target\+Value}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_afc49afca675d00afd0654e813e1e2ace}\label{class_a_s_e6030_1_1_flow_control_valve_afc49afca675d00afd0654e813e1e2ace}} 
-double {\bfseries integration\+Time}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a225f0f413ca5074e534a643a9b4c2977}\label{class_a_s_e6030_1_1_flow_control_valve_a225f0f413ca5074e534a643a9b4c2977}} 
-double {\bfseries control\+Period}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a31bb487e004384b1c84e1606a18babf5}\label{class_a_s_e6030_1_1_flow_control_valve_a31bb487e004384b1c84e1606a18babf5}} 
-\hyperlink{class_a_s_e6030_1_1_listener}{Listener} {\bfseries listener}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a502ddf6c4a79f97e86483a1317a7489b}\label{class_a_s_e6030_1_1_flow_control_valve_a502ddf6c4a79f97e86483a1317a7489b}} 
-Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client {\bfseries client}
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -89,19 +54,6 @@ Constructor
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}\label{class_a_s_e6030_1_1_flow_control_valve_a89cfb29a75e92e322943b6d7ca780436}} 
-\index{A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}!control@{control}}
-\index{control@{control}!A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}}
-\subsubsection{\texorpdfstring{control()}{control()}}
-{\footnotesize\ttfamily int A\+S\+E6030.\+Flow\+Control\+Valve.\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Calculates the new control value from feedback measurement. 
-
-\begin{DoxyReturn}{Returns}
-New control value for valve.
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}\label{class_a_s_e6030_1_1_flow_control_valve_a0a92ca1afb6da92e55a652e07361fd56}} 
 \index{A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}!start\+PI@{start\+PI}}
 \index{start\+PI@{start\+PI}!A\+S\+E6030\+::\+Flow\+Control\+Valve@{A\+S\+E6030\+::\+Flow\+Control\+Valve}}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flowcontrolvalve',['FlowControlValve',['../class_a_s_e6030_1_1_flow_control_valve.html',1,'ASE6030.FlowControlValve'],['../class_a_s_e6030_1_1_flow_control_valve.html#a30ba36af47913e18552ee88461ad70b7',1,'ASE6030.FlowControlValve.FlowControlValve()']]]
+  ['heater',['Heater',['../class_a_s_e6030_1_1_heater.html',1,'ASE6030.Heater'],['../class_a_s_e6030_1_1_heater.html#a1c0420d0f56eb7e1a7d43c44520ae07b',1,'ASE6030.Heater.Heater()']]]
 ];

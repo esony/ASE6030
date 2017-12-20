@@ -8,7 +8,7 @@ Class for controlling on/off heater element
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_a_s_e6030_1_1_heater_a1c0420d0f56eb7e1a7d43c44520ae07b}{Heater} (String \hyperlink{class_a_s_e6030_1_1_heater_a0f7ba6c365f98047a0e8e7f3017fafab}{name}, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client, ref \hyperlink{class_a_s_e6030_1_1_listener}{Listener} listener)
+\hyperlink{class_a_s_e6030_1_1_heater_a1c0420d0f56eb7e1a7d43c44520ae07b}{Heater} (String name, ref Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client client, ref \hyperlink{class_a_s_e6030_1_1_listener}{Listener} listener)
 \item 
 void \hyperlink{class_a_s_e6030_1_1_heater_a0ef024666587dbe494c647214658b412}{turn\+On} ()
 \begin{DoxyCompactList}\small\item\em Turn heater on. \end{DoxyCompactList}\item 
@@ -16,19 +16,6 @@ void \hyperlink{class_a_s_e6030_1_1_heater_a38a0281112b0ab7d5922e52d0a2cecec}{tu
 \begin{DoxyCompactList}\small\item\em Turn heater off. \end{DoxyCompactList}\item 
 void \hyperlink{class_a_s_e6030_1_1_heater_a6b695a9e9acf4ae4947bf3a968c8e6e3}{regulate} (double target\+Temp, string target\+Device, int Tc, int control\+Time)
 \begin{DoxyCompactList}\small\item\em Set the heater to regulate the defined target temperature target\+Temp at thermometer target\+Device, for time control\+Time \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-String \hyperlink{class_a_s_e6030_1_1_heater_a0f7ba6c365f98047a0e8e7f3017fafab}{name}
-\item 
-bool \hyperlink{class_a_s_e6030_1_1_heater_a1f5b6ffba44e01c20fede806bf409414}{is\+On}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_heater_a347875f91c3ddb3c6ddc6f86baa3cc5f}\label{class_a_s_e6030_1_1_heater_a347875f91c3ddb3c6ddc6f86baa3cc5f}} 
-Tut.\+Mpp\+Opc\+Ua\+Client\+Lib.\+Mpp\+Client {\bfseries client}
-\item 
-\mbox{\Hypertarget{class_a_s_e6030_1_1_heater_a08c1090f9af468be9713984536f753b3}\label{class_a_s_e6030_1_1_heater_a08c1090f9af468be9713984536f753b3}} 
-\hyperlink{class_a_s_e6030_1_1_listener}{Listener} {\bfseries listener}
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -97,21 +84,6 @@ Sends signal to simulator/device to turn off the heater. \mbox{\Hypertarget{clas
 Turn heater on. 
 
 Sends signal to simulator/device to turn on the heater. 
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_a_s_e6030_1_1_heater_a1f5b6ffba44e01c20fede806bf409414}\label{class_a_s_e6030_1_1_heater_a1f5b6ffba44e01c20fede806bf409414}} 
-\index{A\+S\+E6030\+::\+Heater@{A\+S\+E6030\+::\+Heater}!is\+On@{is\+On}}
-\index{is\+On@{is\+On}!A\+S\+E6030\+::\+Heater@{A\+S\+E6030\+::\+Heater}}
-\subsubsection{\texorpdfstring{is\+On}{isOn}}
-{\footnotesize\ttfamily bool A\+S\+E6030.\+Heater.\+is\+On\hspace{0.3cm}{\ttfamily [private]}}
-
-Tells whether the heater is on or not. Used internally when regulating temperature. \mbox{\Hypertarget{class_a_s_e6030_1_1_heater_a0f7ba6c365f98047a0e8e7f3017fafab}\label{class_a_s_e6030_1_1_heater_a0f7ba6c365f98047a0e8e7f3017fafab}} 
-\index{A\+S\+E6030\+::\+Heater@{A\+S\+E6030\+::\+Heater}!name@{name}}
-\index{name@{name}!A\+S\+E6030\+::\+Heater@{A\+S\+E6030\+::\+Heater}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily String A\+S\+E6030.\+Heater.\+name\hspace{0.3cm}{\ttfamily [private]}}
-
-Name of the device to be controlled 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
