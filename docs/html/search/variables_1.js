@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['device_5furl',['DEVICE_URL',['../class_a_s_e6030_1_1_controller.html#a2011ff29fbc80180267d0aba04e903aa',1,'ASE6030::Controller']]]
+  ['gain',['gain',['../class_a_s_e6030_1_1_sequence_parameters.html#a54ef8f65093e929f9ba6eee0531502f6',1,'ASE6030::SequenceParameters']]]
 ];

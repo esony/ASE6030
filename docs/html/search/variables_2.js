@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ison',['isOn',['../class_a_s_e6030_1_1_heater.html#a1f5b6ffba44e01c20fede806bf409414',1,'ASE6030::Heater']]]
+  ['impregnationtime',['impregnationTime',['../class_a_s_e6030_1_1_sequence_parameters.html#a9f894780c256e1d4ccba4d528689db2d',1,'ASE6030::SequenceParameters']]],
+  ['integrationtime',['integrationTime',['../class_a_s_e6030_1_1_sequence_parameters.html#ad949634825a6ec898ea53e5483a6ba50',1,'ASE6030::SequenceParameters']]]
 ];

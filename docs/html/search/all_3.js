@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gain',['gain',['../class_a_s_e6030_1_1_sequence_parameters.html#a54ef8f65093e929f9ba6eee0531502f6',1,'ASE6030::SequenceParameters']]],
   ['getbool',['getBool',['../class_a_s_e6030_1_1_listener.html#ac6b8dbf1ed6fd6c3ce0911beef9759ce',1,'ASE6030::Listener']]],
   ['getdouble',['getDouble',['../class_a_s_e6030_1_1_listener.html#af8474a0fcd293043899a51cbb3e05d44',1,'ASE6030::Listener']]],
   ['getint',['getInt',['../class_a_s_e6030_1_1_listener.html#a7f82d12db6e97dd86f78dc2f62b23214',1,'ASE6030::Listener']]],

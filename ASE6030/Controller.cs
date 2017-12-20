@@ -20,7 +20,11 @@ namespace ASE6030
     {
         private MainWindow window;
         private Tut.MppOpcUaClientLib.MppClient.MppClientCtorParams simulatorParams;
+
+        /// MppClient used to controll the process
         public Tut.MppOpcUaClientLib.MppClient client;
+
+        /// Listener will listen for updates from the process
         public Listener listener;
         private const string SIMULATOR_URL = "opc.tcp://127.0.0.1:8087"; /**< Simulator URL */
         private const string DEVICE_URL = "opc.tcp://192.168.137.101"; /**< Device URL */
