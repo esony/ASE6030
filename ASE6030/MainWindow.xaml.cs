@@ -38,26 +38,12 @@ namespace ASE6030
             RED = new SolidColorBrush();
             RED.Color = Colors.OrangeRed;
         }
-        /*
-        private void test()
-        {
-            SortedDictionary<string, dynamic> asd = new SortedDictionary<string, dynamic>();
-            asd["A"] = "asd";
-            asd["B"] = 1;
-            asd["C"] = true;
-            test2(new SortedDictionary<string, dynamic>(asd));
-            Console.WriteLine(asd["A"]);
-            Console.WriteLine(asd["B"]);
-            Console.WriteLine(asd["C"]);
 
-        }
-        private void test2(SortedDictionary<string, dynamic> dsa)
-        {
-            dsa["A"] = "Vityns";
-            dsa["B"] = 2;
-            dsa["C"] = false;
-        }
-        */
+        /// <summary>
+        /// Save user input to parameters
+        /// 
+        /// Handles type check for inputs
+        /// </summary>
         private void setParameters()
         {
             // Type check
@@ -142,13 +128,19 @@ namespace ASE6030
 
         }
 
+        /// <summary>
+        /// Update call to Mainwindow
+        /// 
+        /// Makes an update call to Mainwindow to save new state of devices and update the view. Mainwindow will handle updating the view.
+        /// </summary>
+        /// <param name="state">New state object</param>
         public void updateCall(SortedDictionary<string, dynamic> state)
         {
             // Invoking in the UI thread
             Dispatcher.BeginInvoke((Action)(() => updateState(state)));
         }
         
-        // Save state changes
+        /// Save state changes
         private void updateState(SortedDictionary<string, dynamic> state)
         {
             try
@@ -164,7 +156,8 @@ namespace ASE6030
 
             }
         }
-        // Update the view in mainwindow rather than giving access to everyone
+
+        /// Update the view in mainwindow rather than giving access to everyone
         private void updateView()
         {
             // Tanks
@@ -213,11 +206,19 @@ namespace ASE6030
 
         }
 
+        /// <summary>
+        /// Update call to update process step
+        /// </summary>
+        /// <param name="step">Which process step is in action, 0-5. 0 Means process has stopped</param>
         public void updateProcessFlow(int step)
         {
             Dispatcher.BeginInvoke((Action)(() => updateProcessView(step)));
         }
 
+        /// <summary>
+        /// Handles updating the view
+        /// </summary>
+        /// <param name="step">Step number. 0 means process has stopped</param>
         private void updateProcessView(int step)
         {
             Step1.Background = RED;
